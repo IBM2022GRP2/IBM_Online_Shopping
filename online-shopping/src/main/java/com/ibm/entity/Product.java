@@ -1,6 +1,5 @@
 package com.ibm.entity;
 
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -20,10 +19,12 @@ public class Product {
 	private int stock;
 	@Column(name = "price")
 	private double price;
-	@Column(name = "category",length=5)
+	@Column(name = "category", length = 5)
 	private String category;
-public Product() {
-}
+
+	public Product() {
+	}
+
 	public int getPid() {
 		return pid;
 	}
@@ -64,7 +65,6 @@ public Product() {
 		this.category = category;
 	}
 
-	
 	public Product(int pid, String pname, int stock, double price, String category, List<Product> orders) {
 		this.pid = pid;
 		this.pname = pname;
