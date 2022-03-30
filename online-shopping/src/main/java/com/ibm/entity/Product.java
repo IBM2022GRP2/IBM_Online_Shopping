@@ -5,15 +5,18 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Products")
 public class Product {
 	@Id
-	@Column(name = "product_Id")
+	@Column(name = "product_id")
 	private int pid;
-	@Column(name = "product_Name", length = 25)
+	@Column(name = "product_name", length = 25)
 	private String pname;
 	@Column(name = "stock")
 	private int stock;
@@ -22,6 +25,12 @@ public class Product {
 	@Column(name = "category", length = 5)
 	private String category;
 
+	//many-to-many relation b/w shoppingcart and product
+		@ManyToMany
+		@JoinTable(name="cartp_roduct",
+					joinColumns = {@JoinColumn(name="product_id")},
+					inverseJoinColumns = {@JoinColumn(name="cart_id")})
+		private List<ShoppingCart> pcart;
 	public Product() {
 	}
 
