@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Product;
@@ -37,4 +38,24 @@ private ProductServiceImpl service;
 	public List<Product>list(){
 		return service.list();
 	}
+	
+	@GetMapping(value="/bycategory/{category}",consumes="application/json")
+	public List<Product>findByCategory(@PathVariable String category){
+		return service.byCategory(category);
+	}
+	
+	@GetMapping(value="/byname/{pname}",consumes="application/json")
+	public List<Product>findbyName(@PathVariable String pname)
+	{
+		return service.byName(pname);
+	}
+	
+	@GetMapping(value="/bypricerange",consumes="application/json")
+	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp){
+		return service.byPriceRange(lowp, highp);	
+	}
+	{
+		
+	}
+	
 }

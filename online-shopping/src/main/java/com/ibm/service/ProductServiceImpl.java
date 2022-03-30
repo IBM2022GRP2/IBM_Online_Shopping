@@ -37,4 +37,20 @@ public class ProductServiceImpl implements ProductService {
 		return true;
 	}
 
+	@Override
+	public List<Product> byCategory(String category) {
+		return repo.findByCategory(category);
+	}
+
+	@Override
+	public List<Product> byName(String pname) {
+		// TODO Auto-generated method stub
+		return repo.findByPname(pname);
+	}
+
+	@Override
+	public List<Product> byPriceRange(double lowprice, double highprice) {
+		return repo.findByPriceRange(lowprice, highprice);
+	}
+
 }
