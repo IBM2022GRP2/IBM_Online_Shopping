@@ -12,4 +12,8 @@ public interface ProductService {
 	List<Product> list();
 
 	boolean remove(int pid);
+	
+	List<Product> byCategory(String category);
+	List<Product>byName(String pname);
+	List<Product>byPriceRange(double lowprice, double highprice);
 }
