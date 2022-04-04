@@ -3,17 +3,22 @@ package com.ibm.service;
 import java.util.List;
 
 import com.ibm.entity.Product;
+import com.ibm.exception.InvalidCartException;
+
 
 public interface ProductService {
-	int save(Product p);
-
-	Product fetch(int pid);
-
-	List<Product> list();
-
-	boolean remove(int pid);
 	
+	int save(Product p);
+	
+	Product fetch(int pid);
+	
+	List<Product> list();
+	
+	boolean remove(int pid);
+
 	List<Product> byCategory(String category);
-	List<Product>byName(String pname);
-	List<Product>byPriceRange(double lowprice, double highprice);
+
+	List<Product>byName(String pname)throws InvalidCartException;
+
+	List<Product>byPriceRange(double lowprice, double highprice)throws InvalidCartException;
 }

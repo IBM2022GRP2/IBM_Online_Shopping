@@ -10,6 +10,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+/**
+* @author Arup Bhattacharjee(@github - 09arup06)
+* @since 0.0.1
+**/
+
 @Entity
 @Table(name = "Products")
 public class Product {
@@ -30,7 +35,9 @@ public class Product {
 		@JoinTable(name="cartp_roduct",
 					joinColumns = {@JoinColumn(name="product_id")},
 					inverseJoinColumns = {@JoinColumn(name="cart_id")})
-		private List<ShoppingCart> pcart;
+	
+	private List<ShoppingCart> pcart;
+		
 	public Product() {
 	}
 

@@ -14,7 +14,8 @@ import org.springframework.data.annotation.Id;
 /**
 * @author Mrinal Samanta(@github - Mrinal_Delta)
 * @since 0.0.1
-*/
+**/
+
 @Entity
 @Table(name="Coupons")
 public class Coupon {
