@@ -1,4 +1,4 @@
-package com.ibm.service;
+/*package com.ibm.service;
 
 import java.util.List;
 
@@ -28,4 +28,4 @@ public class UserServiceImpl implements UserService {
 		return repo.findAll();
 	}
 
-}
+}*/

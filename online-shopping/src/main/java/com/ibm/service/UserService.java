@@ -1,4 +1,4 @@
-package com.ibm.service;
+/*package com.ibm.service;
 
 import java.util.List;
 
@@ -10,4 +10,4 @@ public interface UserService {
 	User fetch(int id);
 	
 	List<User> list();
-}
+}*/

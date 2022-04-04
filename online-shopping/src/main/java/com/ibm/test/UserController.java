@@ -1,4 +1,4 @@
-package com.ibm.test;
+/*package com.ibm.test;
 
 import java.util.List;
 
@@ -31,4 +31,4 @@ public class UserController {
 	public List<User>list(){
 		return service.list();
 	}
-}
+}*/

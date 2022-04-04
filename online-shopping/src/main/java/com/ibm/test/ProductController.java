@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.ibm.entity.Product;
-import com.ibm.exception.InvalidCartException;
 import com.ibm.service.ProductServiceImpl;
 
 @RestController
@@ -27,15 +26,12 @@ private ProductServiceImpl service;
 		return "Product saved with id: " + pid;
 	}
 	@GetMapping(value="/fetch/{pid}",consumes="application/json")
-	public Product fetch(@PathVariable int pid) {
-		return service.fetch(pid);
+	public Product fetch(@PathVariable int pid){
+		
+		return service.fetch(pid);				
+		
 	}
 	
-	@GetMapping(value="/del/{pid}",consumes="application/json")
-	public String remove(@PathVariable int pid) {
-		service.remove(pid);
-		return "Removed the Product having product id: "+pid;
-	}
 	
 	@GetMapping(value="/list",consumes="application/json")
 	public List<Product>list(){
@@ -49,30 +45,22 @@ private ProductServiceImpl service;
 	
 	//shows message if given product name is not in the products table 
 	@GetMapping(value="/byname/{pname}",consumes="application/json")
-	public List<Product>findbyName(@PathVariable String pname) throws InvalidCartException
+	public List<Product>findbyName(@PathVariable String pname)
 	{
-		try {
 			return service.byName(pname);
-		} catch (InvalidCartException e) {
-			e.printStackTrace();
-			throw new InvalidCartException("Sorry! We don't sell this product");
-		}
+	
+		
+			
+	
 	}
 	
 	//shows message if no product is found under this filter
 	@GetMapping(value="/bypricerange",consumes="application/json")
-	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp) throws InvalidCartException
-	{
-		try {
+	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp) {
 			return service.byPriceRange(lowp, highp);
-		} catch (InvalidCartException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new InvalidCartException("Sorry! Products not found matching your criteria");
-		}	
+	
+			
 	}
-	{
-		
-	}
+
 	
 }
