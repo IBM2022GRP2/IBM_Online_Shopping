@@ -1,4 +1,4 @@
-package com.ibm.test;
+package com.ibm.rest;
 
 import java.util.List;
 
