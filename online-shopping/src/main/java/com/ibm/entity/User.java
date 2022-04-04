@@ -28,10 +28,10 @@ public class User {
 	private String phone_number;
 	
 //	@OneToMany(mappedBy = "userId")
-//	private List<Order> user_order;
+	//private List<Order> user_order;
 	
-//	@OneToMany(mappedBy = "uaid")
-//	private List<Address> user_add;
+	@OneToMany(mappedBy = "uaid")
+	private List<Address> user_add;
 	
 	@ManyToMany
 	@JoinTable(name="couplink",
