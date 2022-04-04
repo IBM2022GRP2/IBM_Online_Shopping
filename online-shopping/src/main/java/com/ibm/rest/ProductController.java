@@ -3,6 +3,7 @@ package com.ibm.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.ibm.entity.Product;
+import com.ibm.exception.InvalidCartException;
 import com.ibm.service.ProductServiceImpl;
 
 @RestController
@@ -28,11 +31,7 @@ private ProductServiceImpl service;
 		return service.fetch(pid);
 	}
 	
-	@GetMapping(value="/del/{pid}",consumes="application/json")
-	public String remove(@PathVariable int pid) {
-		service.remove(pid);
-		return "Removed the Product having product id: "+pid;
-	}
+
 	
 	@GetMapping(value="/list",consumes="application/json")
 	public List<Product>list(){
@@ -44,18 +43,21 @@ private ProductServiceImpl service;
 		return service.byCategory(category);
 	}
 	
+	
 	@GetMapping(value="/byname/{pname}",consumes="application/json")
-	public List<Product>findbyName(@PathVariable String pname)
+	public List<Product>findbyName(@PathVariable String pname) 
 	{
-		return service.byName(pname);
+	
+			return service.byName(pname);
+		
 	}
 	
+
 	@GetMapping(value="/bypricerange",consumes="application/json")
-	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp){
-		return service.byPriceRange(lowp, highp);	
-	}
-	{
-		
+	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp) {
+	
+			return service.byPriceRange(lowp, highp);
+	
 	}
 	
 }

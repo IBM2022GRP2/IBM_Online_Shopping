@@ -29,12 +29,17 @@ public class User {
 	@Column(length = 10)
 	private String phone_number;
 	
+<<<<<<< HEAD
 //	@JsonManagedReference
 //	@OneToMany(mappedBy = "userord")
 //	private List<Order> user_order;
+=======
+//	@OneToMany(mappedBy = "userId")
+	//private List<Order> user_order;
+>>>>>>> 144dadc027710f75bc1195961d6ba920472aab2c
 	
-//	@OneToMany(mappedBy = "uaid")
-//	private List<Address> user_add;
+	@OneToMany(mappedBy = "uaid")
+	private List<Address> user_add;
 	
 	@ManyToMany
 	@JoinTable(name="couplink",
