@@ -11,6 +11,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "Users")
 public class User {
@@ -27,7 +29,8 @@ public class User {
 	@Column(length = 10)
 	private String phone_number;
 	
-//	@OneToMany(mappedBy = "userId")
+//	@JsonManagedReference
+//	@OneToMany(mappedBy = "userord")
 //	private List<Order> user_order;
 	
 //	@OneToMany(mappedBy = "uaid")
