@@ -12,9 +12,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	@Query("FROM Product WHERE price>=:lowp AND price<=:highp")	
 	List<Product> findByPriceRange(double lowp,double highp);	
 		
-	List<Product>findByCategory(String category) ;
+	List<Product> findByCategory(String category) ;
 	
-	List<Product>findByPname(String pname);
+	List<Product> findByPname(String pname);
  
 
 }

@@ -7,15 +7,23 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.entity.User;
 import com.ibm.repo.UserRepository;
+
 @Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository repo;
+	
 	@Override
 	public int save(User u) {
 		repo.save(u);
 		return u.getUserId();
+	}
+
+	@Override
+	public boolean update(User u) {
+		repo.save(u);
+		return true;
 	}
 
 	@Override
@@ -26,6 +34,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> list() {
 		return repo.findAll();
+	}
+
+
+	@Override
+	public User validate(String email, String password) {
+		return repo.validate(email, password);
 	}
 
 }

@@ -1,16 +1,18 @@
 package com.ibm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 
 /**
  * @author Mrinal Samanta(@github - Mrinal_Delta)
@@ -20,45 +22,55 @@ import org.springframework.data.annotation.Id;
 @Table(name="shopping_cart")
 public class ShoppingCart {
 	@Id
+	@GeneratedValue
 	@Column(name="cart_id")
 	private int cartid;
-	private double price;
+	private double total_price;
 	
 	//many-to-many relation b/w shoppingcart and product
 	@ManyToMany
-	@JoinTable(name="cartproduct",
+	@JoinTable(name="added_products",
 				joinColumns = {@JoinColumn(name="cart_id")},
 				inverseJoinColumns = {@JoinColumn(name="product_id")})
-	private List<Product> shop_cart;
+	private List<Product> shop_cart = new ArrayList<>();
 	
 	@OneToOne
-	@JoinColumn(name="user_id",referencedColumnName = "user_id")
-	private User ucart;
+	@JoinColumn(name="user_id")
+	private User user_cart;
 
-
+	//for cart_id
 	public int getCartid() {
 		return cartid;
 	}
-
 	public void setCartid(int cartid) {
 		this.cartid = cartid;
 	}
 
-	public double getPrice() {
-		return price;
+	//for total_price
+	public double getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(double total_price) {
+		this.total_price = total_price;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	//for products in a cart
+	public List<Product> getShop_cart() {
+		return shop_cart;
+	}
+	public void setShop_cart(List<Product> shop_cart) {
+		this.shop_cart = shop_cart;
 	}
 
-	public User getUcart() {
-		return ucart;
+	//for user_id
+	public User getUser_cart() {
+		return user_cart;
+	}
+	public void setUser_cart(User user_cart) {
+		this.user_cart = user_cart;
 	}
 
-	public void setUcart(User ucart) {
-		this.ucart = ucart;
-	}
+	
 	
 	
 }

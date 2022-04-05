@@ -4,12 +4,12 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 
 /**
 * @author Mrinal Samanta(@github - Mrinal_Delta)
@@ -27,44 +27,46 @@ public class Coupon {
 	@Column(name="discount")
 	private double discount;
 	
+	//many to many relation b/w coupon and users
 	@ManyToMany
-	@JoinTable(name="couplink",
+	@JoinTable(name="used_coupons",
 				joinColumns = @JoinColumn(name="coupon_id"),
 				inverseJoinColumns = @JoinColumn(name="user_id"))
-	private List<User> coupuser;
+	private List<User> coup_user;
 	
-
+	//for coupon_id
 	public int getCid() {
 		return cid;
 	}
-
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
 
+	//for coupon_name
 	public String getCname() {
 		return cname;
 	}
-
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
 
+	//for discount_value
 	public double getDiscount() {
 		return discount;
 	}
-
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 
-	public List<User> getCoupuser() {
-		return coupuser;
+	//for user and coupon 
+	public List<User> getCoup_user() {
+		return coup_user;
+	}
+	public void setCoup_user(List<User> coup_user) {
+		this.coup_user = coup_user;
 	}
 
-	public void setCoupuser(List<User> coupuser) {
-		this.coupuser = coupuser;
-	}
+	
 	
 	
 }

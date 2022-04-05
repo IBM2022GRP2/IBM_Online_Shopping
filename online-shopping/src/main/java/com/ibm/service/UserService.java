@@ -7,7 +7,11 @@ import com.ibm.entity.User;
 public interface UserService {
 	int save(User u);
 	
+	boolean update(User u);
+	
 	User fetch(int id);
+	
+	User validate(String email,String password);
 	
 	List<User> list();
 }

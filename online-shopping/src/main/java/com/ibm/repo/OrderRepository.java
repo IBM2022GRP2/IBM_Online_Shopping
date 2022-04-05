@@ -1,4 +1,4 @@
-package main.java.com.ibm.repo;
+package com.ibm.repo;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.ibm.entity.Order;
 
-public class OrderRepository extends JpaRepository<Order, Integer> {
+public interface OrderRepository extends JpaRepository<Order, Integer> {
 	
 	@Query("FROM Order Where user_id=:uid")
 	List<Order> findAllByUser(int uid);

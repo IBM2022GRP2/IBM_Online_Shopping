@@ -24,21 +24,25 @@ public class ProductServiceImpl implements ProductService {
 
 	}
 
+	//For Updating Products
+	@Override
+	public boolean update(Product p) {
+		repo.save(p);
+		return true;
+	}
+	
 	//Fetching products by their product id
 	@Override
-	public Product fetch(int pid) {
-		
-			return repo.findById(pid).get();
-	
+	public Product fetchByID(int pid) {
+		return repo.findById(pid).get();
 	}
+	
 	//Getting the list of all products
 	@Override
 	public List<Product> list() {
 		return repo.findAll();
 	}	
 	
-
-
 	//Getting products by searching their category
 	@Override
 	public List<Product> byCategory(String category) {
@@ -49,13 +53,15 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> byName(String pname)  {
 		return repo.findByPname(pname);
-		
-		}
+	}
 	
 	//Getting products based on their prices
 	@Override
 	public List<Product> byPriceRange(double lowprice, double highprice){
 		return repo.findByPriceRange(lowprice, highprice);
 	}
+
+	
+
 
 }

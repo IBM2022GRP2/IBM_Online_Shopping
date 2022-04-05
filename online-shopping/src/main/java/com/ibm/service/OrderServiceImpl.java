@@ -1,8 +1,8 @@
-package main.java.com.ibm.service;
+package com.ibm.service;
 
 import com.ibm.entity.Order;
 
-import main.java.com.ibm.repo.OrderRepository;
+import com.ibm.repo.OrderRepository;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	@Override
-	public List<Order> fetchAllByUserId(int uid){
-		return repo.findAllByUser(uid);
+	public List<Order> fetchAllByUserId(int userid){
+		return repo.findAllByUser(userid);
 	}
 
 }

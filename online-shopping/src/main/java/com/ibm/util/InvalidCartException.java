@@ -1,4 +1,4 @@
-package com.ibm.exception;
+package com.ibm.util;
 
 /**
 * @author Arup Bhattacharjee(@github - 09arup06)

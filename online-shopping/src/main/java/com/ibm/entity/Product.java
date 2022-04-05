@@ -1,5 +1,6 @@
 package com.ibm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,72 +22,83 @@ public class Product {
 	@Id
 	@Column(name = "product_id")
 	private int pid;
-	@Column(name = "product_name", length = 25)
+	@Column(name = "product_name", length = 30)
 	private String pname;
 	@Column(name = "stock")
 	private int stock;
 	@Column(name = "price")
 	private double price;
-	@Column(name = "category", length = 5)
+	@Column(name = "category", length = 10)
 	private String category;
 
 	//many-to-many relation b/w shoppingcart and product
-		@ManyToMany
-		@JoinTable(name="cartp_roduct",
-					joinColumns = {@JoinColumn(name="product_id")},
-					inverseJoinColumns = {@JoinColumn(name="cart_id")})
+	@ManyToMany
+	@JoinTable(name="added_products",
+				joinColumns = {@JoinColumn(name="product_id")},
+				inverseJoinColumns = {@JoinColumn(name="cart_id")})
+	private List<ShoppingCart> prod_cart = new ArrayList<>();
 	
-	private List<ShoppingCart> pcart;
-		
-	public Product() {
-	}
-
+	//many to many b/w order and products
+	@ManyToMany
+	@JoinTable(name="ordered_products",
+			joinColumns = {@JoinColumn(name="product_id")},
+			inverseJoinColumns = {@JoinColumn(name="order_id")})
+	private List<Order> prod_ord = new ArrayList<>();
+	
+	//for product_id
 	public int getPid() {
 		return pid;
 	}
-
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
 
+	//for product_name
 	public String getPname() {
 		return pname;
 	}
-
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
 
+	//for product_stock
 	public int getStock() {
 		return stock;
 	}
-
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
 
+	//for product_price
 	public double getPrice() {
 		return price;
 	}
-
 	public void setPrice(double price) {
 		this.price = price;
 	}
 
+	//for product_category
 	public String getCategory() {
 		return category;
 	}
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
-	public Product(int pid, String pname, int stock, double price, String category, List<Product> orders) {
-		this.pid = pid;
-		this.pname = pname;
-		this.stock = stock;
-		this.price = price;
-		this.category = category;
+	//for products in a shoppingcart
+	public List<ShoppingCart> getProd_cart() {
+		return prod_cart;
+	}
+	public void setProd_cart(List<ShoppingCart> prod_cart) {
+		this.prod_cart = prod_cart;
+	}
+
+	//for products in an order
+	public List<Order> getProd_ord() {
+		return prod_ord;
+	}
+	public void setProd_ord(List<Order> prod_ord) {
+		this.prod_ord = prod_ord;
 	}
 
 	@Override

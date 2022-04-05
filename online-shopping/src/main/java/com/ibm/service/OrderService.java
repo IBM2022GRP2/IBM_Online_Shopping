@@ -1,4 +1,4 @@
-package main.java.com.ibm.service;
+package com.ibm.service;
 
 import java.util.List;
 
