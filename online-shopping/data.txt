@@ -1,0 +1,80 @@
+Products-
+ {
+        "pid": 101,
+        "pname": "Park Avenue",
+        "stock": 25,
+        "price": 2000.0,
+        "category": "Unisex"
+    },
+    {
+        "pid": 102,
+        "pname": "Axe Signature",
+        "stock": 20,
+        "price": 300.0,
+        "category": "Male"
+    },
+    {
+        "pid": 103,
+        "pname": "Calvin Klein",
+        "stock": 30,
+        "price": 3000.0,
+        "category": "Male"
+    },
+    {
+        "pid": 104,
+        "pname": "Wild Stone Code",
+        "stock": 25,
+        "price": 3000.0,
+        "category": "Male"
+    },
+    {
+        "pid": 105,
+        "pname": "Engage",
+        "stock": 20,
+        "price": 200.0,
+        "category": "Female"
+    },
+    {
+        "pid": 106,
+        "pname": "Denver",
+        "stock": 35,
+        "price": 350.0,
+        "category": "Unisex"
+    },
+    {
+        "pid": 107,
+        "pname": "Fogg",
+        "stock": 50,
+        "price": 150.0,
+        "category": "Male"
+    }
+    
+Users - 
+{
+	"userId":10001,
+	"username":"Mark Herman",
+	"email":"mark@email.com",
+	"password":"mark@1234",
+	"phone_number":"5674891283"
+}
+{
+	"userId":10002,
+	"username":"John Adler",
+	"email":"john@mail.com",
+	"password":"john@1234",
+	"phone_number":"6582391539"
+}
+{
+	"userId":10003,
+	"uname":"Karl Marx",
+	"email":"karl@mail.com",
+	"password":"karl@1234",
+	"phone_number":"4756197312"
+}
+
+
+
+
+
+
+
