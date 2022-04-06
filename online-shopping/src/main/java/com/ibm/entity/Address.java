@@ -11,6 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /** This class represents generalized User Address.
  * 
  * @author ANIRBAN BHATTACHARYYA
@@ -34,11 +37,13 @@ public class Address {
 	private int pincode;
 	
 	//many to one b/w address and user
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User useradd;
 	
 	//one to many relation b/w order and address
+	@JsonManagedReference
 	@OneToMany(mappedBy="addOrd")
 	private List<Order> ads_orders = new ArrayList<>();
 
@@ -91,18 +96,21 @@ public class Address {
 	}
 
 	//for user_id
+	@JsonBackReference
 	public User getUseradd() {
 		return useradd;
 	}
+	@JsonBackReference
 	public void setUseradd(User useradd) {
 		this.useradd = useradd;
 	}
 
 	//for orders in a address
+	@JsonManagedReference
 	public List<Order> getAds_orders() {
 		return ads_orders;
 	}
-
+	@JsonManagedReference
 	public void setAds_orders(List<Order> ads_orders) {
 		this.ads_orders = ads_orders;
 	}
