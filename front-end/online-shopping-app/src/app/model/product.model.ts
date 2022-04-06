@@ -1,9 +1,0 @@
-export class Product{
-    constructor(
-        public pid:number,
-        public pname:string,
-        public price:number,
-        public stock:number,
-        public category:string
-    ){}
-}
