@@ -7,7 +7,7 @@ import { Product } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  private static url : string = "http://localhost:8880";
+  private static url : string = "http://localhost:8880/Product";
   prd:Product;
   products : Product[] = [];
   list:Product[]=[];

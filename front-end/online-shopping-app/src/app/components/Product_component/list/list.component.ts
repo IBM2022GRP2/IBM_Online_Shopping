@@ -13,7 +13,9 @@ product:Product[]=[];
   constructor(private service:ProductService) { }
 
   ngOnInit(): void {
-    this.service.List();
+    this.service.List().then(data=>{
+      this.product = data;
+    });
   }
   
 }

@@ -66,7 +66,7 @@ Users -
 }
 {
 	"userId":10003,
-	"uname":"Karl Marx",
+	"username":"Karl Marx",
 	"email":"karl@mail.com",
 	"password":"karl@1234",
 	"phone_number":"4756197312"
