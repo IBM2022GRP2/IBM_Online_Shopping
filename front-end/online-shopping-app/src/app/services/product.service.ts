@@ -34,9 +34,7 @@ export class ProductService {
     // return this.http.get<Stock[]>(StockService.uri+"/getlist");
   }
   
-  del(pid:number){
-    return this.http.delete(ProductService.url+"/del/"+pid).subscribe();
-  }
+  
   findByCategory(category:string){
     return this.http.get<Product[]>(ProductService.url+"/byCategory?category="+category);
   }
