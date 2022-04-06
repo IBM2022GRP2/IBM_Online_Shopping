@@ -9,19 +9,22 @@ import { Product } from '../models/product.model';
 export class ProductService {
   private static url : string = "http://localhost:8880";
   prd:Product;
- products : Product[] = [];
+  products : Product[] = [];
   list:Product[]=[];
   constructor(private http:HttpClient) {
     this.prd=new Product(0,'',0,0,'')
-   }
+  }
+
   addProduct(product:Product){
     this.http.post(ProductService.url+"/add",product).subscribe(data=>{data=product;});
   }
+
   async getProductBy(pid : number){
     const product$ = this.http.get<Product>(ProductService.url+`/fetch/${pid}`);
     const res = await firstValueFrom(product$);
     return res;
   }
+
   async List(){
     const products$= this.http.get<Product[]>(ProductService.url+"/list");
     products$.subscribe(data=>{
@@ -30,6 +33,7 @@ export class ProductService {
     return await firstValueFrom(products$);
     // return this.http.get<Stock[]>(StockService.uri+"/getlist");
   }
+  
   del(pid:number){
     return this.http.delete(ProductService.url+"/del/"+pid).subscribe();
   }
