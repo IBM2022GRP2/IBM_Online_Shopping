@@ -1,16 +1,20 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Stock</td>
-            <td>Price</td>
-            <td>Category</td>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Category</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let a of product">
-            <td>{{a.pid}}</td><td>{{a.pname}}</td><td>{{a.stock}}</td><td>{{a.price}}</td><td>{{a.category}}</td>
+            <td>{{a.pid}}</td>
+            <td>{{a.pname}}</td>
+            <td>{{a.stock}}</td>
+            <td>{{a.price}}</td>
+            <td>{{a.category}}</td>
         </tr>
     </tbody>
-    </table><p>list works!</p>
+</table>
