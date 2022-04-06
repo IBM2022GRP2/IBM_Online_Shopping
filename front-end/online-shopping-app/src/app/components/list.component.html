@@ -1,0 +1,12 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Phone Number</th><th>Email ID</th><th>Laptop Purchased</th><th>Mobile Purchased</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of product">
+            <td>{{a.pid}}</td><td>{{a.pname}}</td><td>{{a.stock}}</td><td>{{a.price}}</td><td>{{a.category}}</td>
+        </tr>
+    </tbody>
+    </table><p>list works!</p>
