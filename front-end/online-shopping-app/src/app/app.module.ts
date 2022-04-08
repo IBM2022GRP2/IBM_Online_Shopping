@@ -9,6 +9,8 @@ import { ListComponent } from './components/Product_component/list/list.componen
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
+import { AddComponent } from './components/Address_component/add/add.component';
+import { SearchComponent } from './components/Address_component/search/search.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { LoginsuccessComponent } from './components/user/loginsuccess/loginsucce
     ListComponent,
     RegisterComponent,
     LoginComponent,
-    LoginsuccessComponent
+    LoginsuccessComponent,
+    AddComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
