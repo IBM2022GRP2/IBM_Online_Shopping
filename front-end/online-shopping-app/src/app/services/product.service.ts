@@ -1,49 +1,47 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+
 import { Product } from '../models/product.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private static url : string = "http://localhost:8880/Product";
-  prd:Product;
-  products : Product[] = [];
-  list:Product[]=[];
-  constructor(private http:HttpClient) {
-    this.prd=new Product(0,'',0,0,'')
+  private static url: string = "http://localhost:8880/Product";
+  prd: Product;
+  products: Product[] = [];
+  list: Product[] = [];
+  constructor(private http: HttpClient) {
+    this.prd = new Product(0, '', 0, 0, '')
   }
-
-  addProduct(product:Product){
-    this.http.post(ProductService.url+"/add",product).subscribe(data=>{data=product;});
+  addProduct(product: Product) {
+    this.http.post(ProductService.url + "/add", product).subscribe(data => { data = product; });
   }
-
-  async getProductBy(pid : number){
-    const product$ = this.http.get<Product>(ProductService.url+`/fetch/${pid}`);
+  async getProductBy(pid: number) {
+    const product$ = this.http.get<Product>(ProductService.url + `/fetch/${pid}`);
     const res = await firstValueFrom(product$);
     return res;
   }
-
-  async List(){
-    const products$= this.http.get<Product[]>(ProductService.url+"/list");
-    products$.subscribe(data=>{
-      this.products=data;
+  async List() {
+    const products$ = this.http.get<Product[]>(ProductService.url + "/list");
+    products$.subscribe(data => {
+      this.products = data;
     });
     return await firstValueFrom(products$);
-    // return this.http.get<Stock[]>(StockService.uri+"/getlist");
   }
-  
-  
-  findByCategory(category:string){
-    return this.http.get<Product[]>(ProductService.url+"/byCategory?category="+category);
+ async findByCategory(category: string) {
+   const product$ =this.http.get<Product[]>(ProductService.url + "/byCategory/" + category);
+    return await firstValueFrom(product$);
   }
-  findByName(name:string){
-    return this.http.get<Product[]>(ProductService.url+"/byName?name="+name);
+ async findByName(name: string) {
+   const product$ = this.http.get<Product[]>(ProductService.url + "/byName/" + name);
+    return await firstValueFrom(product$);
   }
-  
-  findByPriceRange(lowp:number,highp:number){
-    return this.http.get<Product[]>(ProductService.url+"/byPriceRange?lowp="+lowp+"&highp="+highp);
+ async findByPriceRange(lowp: number, highp: number) {
+   const product$ = this.http.get<Product[]>(ProductService.url + "/byPriceRange?lowp=" + lowp + "&highp=" + highp);
+    return await firstValueFrom(product$);
   }
 
 

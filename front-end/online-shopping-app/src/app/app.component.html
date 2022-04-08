@@ -1,38 +1,29 @@
-<!-- <app-list></app-list>
-<app-login></app-login>
-<a [routerLink]="['list']">LIST</a> | <a [routerLink]="['login']">Login</a> -->
-
-
-
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nev-item">
-          <a href="" class="nav-link active" href="#" >Badhiya Store</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['register']">Register</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['login']">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['list']">List Products</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <br>
-  <hr>
-
-
-  <!-- 
-  <a [routerLink]="['add']">Add Album</a> | <a [routerLink]="['list']">Album List</a>
-  <hr> -->
-
   <div class="container-fluid">
-    <router-outlet></router-outlet>
+    <ul class="navbar-nav">
+      <li class="nev-item">
+        <a class="nav-link active" href="#">Badhiya Store</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['register']">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['login']">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['list']">List Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['search']">Search Products</a>
+      </li>
+    </ul>
   </div>
+</nav>
+<br>
+<hr>
 
 
-  
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

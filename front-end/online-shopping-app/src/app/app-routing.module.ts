@@ -4,16 +4,16 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ListComponent } from './components/Product_component/list/list.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
-import { AddComponent } from './components/Address_component/add/add.component';
 import { SearchComponent } from './components/Address_component/search/search.component';
+import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
 
 const routes: Routes = [
-  {path:" ",component:LoginComponent},
   {path:'login',component : LoginComponent},
   {path:'loginsuccess',component: LoginsuccessComponent},
   {path:'register',component : RegisterComponent},
   {path:'list',component: ListComponent},
-  {path:'**',redirectTo:'/list',pathMatch:'full'}
+  {path : '',component:RegisterComponent},
+  { path: 'search' , component:ProductSearchComponent }
 
   // [address path]
   // {path:'',redirectTo:'/add',pathMatch:'full'},

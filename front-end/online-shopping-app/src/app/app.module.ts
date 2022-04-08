@@ -11,6 +11,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
 import { AddComponent } from './components/Address_component/add/add.component';
 import { SearchComponent } from './components/Address_component/search/search.component';
+import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { SearchComponent } from './components/Address_component/search/search.co
     LoginComponent,
     LoginsuccessComponent,
     AddComponent,
-    SearchComponent
+    SearchComponent,
+    ProductSearchComponent
+    
   ],
   imports: [
     BrowserModule,
