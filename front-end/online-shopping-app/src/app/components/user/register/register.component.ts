@@ -17,10 +17,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   registerUser(){
-    this.service.loginUserFromRemote(this.user).subscribe(data=>{
-      console.log("Response Received");
-      this._router.navigate(['/login']);
-    })
+    this.service.registerUserFromRemote(this.user);
+    this._router.navigate(['/login']); 
   }
 
 }

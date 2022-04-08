@@ -38,16 +38,16 @@ public class UserController {
 			return "Unsuccessfull";
 	}
 	
-	@GetMapping(value = "/fetchuser/{userId}", consumes="application/json")
+	@GetMapping(value = "/fetchuser/{userId}", produces="application/json")
 	public User fetch(@PathVariable int userId) {
 		return service.fetch(userId);
 	}
 	
-	@GetMapping(value="/listuser",consumes="application/json")
+	@GetMapping(value="/listuser",produces="application/json")
 	public List<User> list(){
 		return service.list();
 	}
-	@GetMapping(value="/login",consumes="application/json")
+	@PostMapping(value="/login",consumes="application/json")
 	public User validate(@RequestBody Login l){
 		return service.validate(l.getEmail(), l.getPass());
 	}

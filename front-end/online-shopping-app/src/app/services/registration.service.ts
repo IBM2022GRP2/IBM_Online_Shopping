@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
+import { Login } from '../models/login.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistrationService {
-
+  private static url : string = "http://localhost:8880/User";
   constructor(private _http: HttpClient) { }
-  public loginUserFromRemote(user : User): Observable<any>{
-    return this._http.post<any>("http://localhost:8880/login",user);
+
+  async loginUserFromRemote(login : Login){
+    const user$ = this._http.post<User>(RegistrationService.url+"/login",login);
+    const res = await firstValueFrom(user$);
+    return res;
+
   }
 
-  public registerUserFromRemote(user: User){
-    return this._http.post("http://localhost:8880/signup",user);
+  async registerUserFromRemote(user: User){
+    const user$ = this._http.post(RegistrationService.url+"/signup",user);
+    return await firstValueFrom(user$);
   }
 }
