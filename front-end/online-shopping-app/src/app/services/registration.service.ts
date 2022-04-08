@@ -7,19 +7,17 @@ import { Login } from '../models/login.model';
 @Injectable({
   providedIn: 'root'
 })
-export class RegistrationService {
+export class UserService {
   private static url : string = "http://localhost:8880/User";
   constructor(private _http: HttpClient) { }
 
   async loginUserFromRemote(login : Login){
-    const user$ = this._http.post<User>(RegistrationService.url+"/login",login);
-    const res = await firstValueFrom(user$);
-    return res;
-
+    const user$ = this._http.post<User>(UserService.url+"/login",login);
+    return await firstValueFrom(user$);
   }
 
   async registerUserFromRemote(user: User){
-    const user$ = this._http.post(RegistrationService.url+"/signup",user);
+    const user$ = this._http.post(UserService.url+"/signup",user);
     return await firstValueFrom(user$);
   }
 }

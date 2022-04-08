@@ -47,6 +47,7 @@ public class UserController {
 	public List<User> list(){
 		return service.list();
 	}
+	
 	@PostMapping(value="/login",consumes="application/json")
 	public User validate(@RequestBody Login l){
 		return service.validate(l.getEmail(), l.getPass());
