@@ -34,11 +34,13 @@ public class User {
 	
 	//one to many relation b/w user and order
 	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy = "userord")
 	private List<Order> user_orders = new ArrayList<>();
 	
 	//one to many relation b/w user and address
 	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy = "useradd")
 	private List<Address> user_addresses = new ArrayList<>();
 	
@@ -93,20 +95,24 @@ public class User {
 	
 	//for user_order
 	@JsonManagedReference
+	@JsonIgnore
 	public List<Order> getUser_orders() {
 		return user_orders;
 	}
 	@JsonManagedReference
+	@JsonIgnore
 	public void setUser_orders(List<Order> user_orders) {
 		this.user_orders = user_orders;
 	}
 
 	//for user_address
 	@JsonManagedReference
+	@JsonIgnore
 	public List<Address> getUser_addresses() {
 		return user_addresses;
 	}
 	@JsonManagedReference
+	@JsonIgnore
 	public void setUser_addresses(List<Address> user_addresses) {
 		this.user_addresses = user_addresses;
 	}

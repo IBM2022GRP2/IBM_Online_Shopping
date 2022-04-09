@@ -23,7 +23,7 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
-	@PostMapping(value = "/signup", consumes="application/json")
+	@PostMapping(value="/signup", consumes="application/json")
 	public String save(@RequestBody User u) {
 		int uid =service.save(u);
 		return "User saved with id: " + uid;
