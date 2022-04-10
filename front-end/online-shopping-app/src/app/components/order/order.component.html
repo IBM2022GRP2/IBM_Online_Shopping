@@ -1,0 +1,9 @@
+<h2>List of Orders</h2>
+<table>
+    <tr>
+        <th>Order Id</th><th>User id</th><th>Order Date</th><th>Total Price</th><th>Order Status</th><th>Order Address</th>
+    </tr>
+    <tr *ngFor="let ord of Order">
+        <td>{{ord.oid}}</td><td>{{ord.userord}}</td><td>{{ord.date | Date}}</td><td>{{ord.total_price}}</td><td>{{ord.status}}</td><td>{{ord.addOrd}}</td>
+    </tr>
+</table>
