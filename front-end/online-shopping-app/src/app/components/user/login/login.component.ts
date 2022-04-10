@@ -29,12 +29,15 @@ export class LoginComponent implements OnInit {
       this.user = data;
       console.log("Data", data);
     });
-
-    if(this.user!=null){
+    if(this.login.email == "admin" && this.login.pass == "admin"){
+      this.route.navigate(['adminpanel']);
+    }
+    else if(this.user!=null){
       this.isLoggedIn=true;
-      // localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
-      // localStorage.setItem("regularUser", JSON.stringify(this.user));
+      localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
+      localStorage.setItem("regularUser", JSON.stringify(this.user));
       console.log("Logged IN", this.user);
+      this.route.navigate(['loginsuccess'])
     }else{
       this.isLoggedIn=false;
     }

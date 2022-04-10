@@ -1,22 +1,38 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
   <div class="container-fluid">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" >
       <li class="nev-item">
         <a class="nav-link active" href="#">Badhiya Store</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['register']">Register</a>
+        <a class="nav-link" *ngIf="router.url != '/loginsuccess'" [routerLink]="['register']">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['login']">Login</a>
+        <a class="nav-link"  *ngIf="router.url != '/loginsuccess'" [routerLink]="['login']">Login</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" [routerLink]="['list']">List Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['search']">Search Products</a>
       </li>
     </ul>
+    <ul class="navbar-nav ms-auto" >
+      <!-- <li class="nev-item">
+        <a class="nav-link active" href="#">Badhiya</a>
+      </li> -->
+      <li class="nav-item"  *ngIf="router.url == '/loginsuccess'" >
+        <div ngbDropdown class="d-inline-block" >
+          <button type="button" class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>My Account</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem  [routerLink]="['list']">Cart</button>
+            <button ngbDropdownItem>Orders</button>
+            <button ngbDropdownItem>Profile</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    
   </div>
 </nav>
 <br>

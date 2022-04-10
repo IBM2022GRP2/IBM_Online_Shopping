@@ -12,6 +12,8 @@ import { LoginsuccessComponent } from './components/user/loginsuccess/loginsucce
 import { AddComponent } from './components/Address_component/add/add.component';
 import { SearchComponent } from './components/Address_component/search/search.component';
 import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminpanelComponent } from './components/user/adminpanel/adminpanel.component';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { ProductSearchComponent } from './components/Product_component/product-s
     LoginsuccessComponent,
     AddComponent,
     SearchComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    AdminpanelComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
