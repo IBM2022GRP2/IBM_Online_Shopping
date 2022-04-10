@@ -12,6 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class LoginsuccessComponent implements OnInit {
 
+  viewOrd : boolean = false;
   addressStatus : boolean = false;
   user : User ;
   constructor(private cartService : CartService,private addressService : AddressService,private router : Router) {
@@ -35,5 +36,9 @@ export class LoginsuccessComponent implements OnInit {
 
   redirect(){
     this.router.navigate(['addAddress']);
+  }
+
+  viewOrders(){
+    this.viewOrd = !this.viewOrd;
   }
 }

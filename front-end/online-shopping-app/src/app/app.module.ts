@@ -5,10 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { ComponentsComponent } from './order/components/components.component';
 import { OrderComponent } from './components/order/order.component';
-=======
 import { ListProductComponent } from './components/Product_component/list/list.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -24,15 +21,10 @@ import { AddCouponComponent } from './components/Coupon_component/add/add.compon
 import { ListCouponComponent } from './components/Coupon_component/list/list.component';
 import { AddProductComponent } from './components/Product_component/add/add.component';
 
->>>>>>> 2faa68eadb41de14dd630a34eaff9a1c44e7520c
-
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    ComponentsComponent,
-    OrderComponent
-=======
+    OrderComponent,
     AddProductComponent,
     ListProductComponent,
     RegisterComponent,
@@ -47,7 +39,6 @@ import { AddProductComponent } from './components/Product_component/add/add.comp
     AddCouponComponent,
     ListCouponComponent
     
->>>>>>> 2faa68eadb41de14dd630a34eaff9a1c44e7520c
   ],
   imports: [
     BrowserModule,
