@@ -43,6 +43,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	@Override
 	public int createCart(int uid) {
 		ShoppingCart cart = new ShoppingCart();
+		System.out.println(uid);
 		cart.setUser_cart(userserv.fetch(uid));
 		repo.save(cart);
 		return cart.getCartid();

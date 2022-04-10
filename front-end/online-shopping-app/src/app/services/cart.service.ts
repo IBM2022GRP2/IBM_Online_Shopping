@@ -15,9 +15,7 @@ export class CartService {
 
   //crateing a cart when the user registers
   createCart(uid : number){
-    this.http.post(CartService.url+"/create/"+uid,{}).subscribe(data=>{
-      data=uid;
-    });
+    this.http.post(CartService.url+"/create/"+uid,{}).subscribe(data=>{data=uid});
   }
 
   //adding items to cart

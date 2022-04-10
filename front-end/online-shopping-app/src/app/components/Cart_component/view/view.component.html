@@ -1,44 +1,48 @@
-<div class="container-fluid mt-3" *ngFor="let i of items">
-    <div class="card">
+<div *ngIf="cart.total_price !== 0">
+    <div class="container-fluid mt-3" *ngFor="let i of items">
+        <div class="card">
+            <table>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt=""></td>
+                    <td>
+                        <h4 class="text-secondary display-6">{{i.pname}}</h4>
+                        <table>
+                            <tr><td>
+                                <tr><td>price :{{i.price | currency : "INR"}}</td></tr>
+                                <tr><td>C :{{i.category}}</td></tr></td>
+                        </table>
+                    </td>
+                   </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <list-address></list-address>
+    </div>
+    <hr>
+    <div>
+        <list-coupon></list-coupon>
+    </div>
+    <div>
         <table>
-            <tr>
-                <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt=""></td>
-                <td>
-                    <h4 class="text-secondary display-6">{{i.pname}}</h4>
-                    <table>
-                        <tr><td>
-                            <tr><td>price :{{i.price | currency : "INR"}}</td></tr>
-                            <tr><td>C :{{i.category}}</td></tr></td>
-                    </table>
-                </td>
-               </tr>
+            <tbody>
+                <tr>
+                    <td>
+                        <h3>Your Total Amount: </h3>
+                    </td>
+                    <td>
+                        <h3>{{cart.total_price | currency:"INR"}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="text-align: center;"><button type="submit" class="btn btn-primary" (click)="checkout()">Checkout</button></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
-<hr>
-<div>
-    <list-address></list-address>
-</div>
-<hr>
-<div>
-    <list-coupon></list-coupon>
-</div>
-<div>
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    <h3>Your Total Amount: </h3>
-                </td>
-                <td>
-                    <h3>{{cart.total_price | currency:"INR"}}</h3>
-                </td>
-            </tr>
-            <tr>
-                <td colspan=2 style="text-align: center;"><button type="submit" class="btn btn-primary" (click)="checkout()">Checkout</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
-
+<div *ngIf="cart.total_price === 0">
+    <h1>You have nothing in your cart to checkout...</h1>
+</div>

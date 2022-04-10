@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserProduct } from 'src/app/models/pojos/user.product.model';
 import { Product } from 'src/app/models/product.model';
 import { User } from 'src/app/models/user.model';
@@ -14,20 +15,23 @@ import { ProductService } from 'src/app/services/product.service';
 export class ListProductComponent implements OnInit {
   product: Product[] = [];
   user : User = new User(0,"","","","");
-  constructor(private service: ProductService,private cartService : CartService) { }
+  loginStatus : boolean = false;
+  constructor(private service: ProductService,private cartService : CartService,private router : Router) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem("regularUser")!);
+    this.loginStatus = JSON.parse(localStorage.getItem("loginStatus")!)
     this.service.List().then(data => {
       this.product = data;
     })
   }
 
   addToCart(idx : number){
-    // new UserProduct(this.user.userId,this.product[idx].pid);
+    
      this.cartService.addToCart(new UserProduct(this.user.userId,this.product[idx].pid));
      setTimeout(()=>{
        this.ngOnInit();
      },1000);
+
   }
 }

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.isAdmin = true;
       localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
       localStorage.setItem("adminStatus",JSON.stringify(this.isAdmin));
-      this.route.navigate(['adminpanel']);
+      this.route.navigate(['adminpanel']).then(()=>{window.location.reload()});
     }
     else{
       this.service.loginUserFromRemote(this.login).then(data => {

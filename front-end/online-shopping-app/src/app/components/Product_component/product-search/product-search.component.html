@@ -20,16 +20,14 @@
     </form>
 </div>
 
-<div class="table" style="display: inline-block;" *ngFor="let p of product">
+<div class="table" style="display: inline-block;" *ngFor="let p of product;let i = index">
     <div class="card">
         <table>
             <tr>
+                <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt="" style="height: 150px; width: 150px; display: inline-flex;"></td>
                 <td>
                     <h4 class="text-secondary display-6">{{p.pname}}</h4>
                     <table>
-                        <tr>
-                            <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt="" style="height: 150px; width: 150px; display: inline-flex;"></td>
-                        </tr>
                         <tr>
                             <td>Price :{{p.price | currency : "INR"}}</td>
                         </tr>
@@ -39,14 +37,9 @@
                         <tr>
                             <td>Category :{{p.category}}</td>
                         </tr>
-                    </table>
+                    </table>           
                 </td>
-            </tr>
-            <tr>
-                <td><input class="btn btn-primary" type="button" value="add to cart"></td>
-            </tr>
-
+                <td><input class="btn btn-primary" type="button" value="add to cart" (click)="addToCart(i)"></td>
         </table>
-
-
     </div>
+</div>

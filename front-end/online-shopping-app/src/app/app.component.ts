@@ -20,8 +20,11 @@ export class AppComponent implements OnInit{
   }
 
   goToCart(){
-    this.router.navigate(['viewCart']);
+    setTimeout(()=>{
+    this.router.navigate(['viewCart']);}
+    ,1000);
   }
+
   logout(){
     localStorage.clear();
     this.status = false;

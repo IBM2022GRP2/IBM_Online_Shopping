@@ -20,8 +20,11 @@ export class RegisterComponent implements OnInit {
   
   registerUser(){
     this.service.registerUserFromRemote(this.user);
-    this.cartService.createCart(this.user.userId);
-    this._router.navigate(['login']); 
+    setTimeout(()=>{
+      this.cartService.createCart(this.user.userId);
+    },1000);
+    this._router.navigate(['login']);
+     
   }
 
 }
