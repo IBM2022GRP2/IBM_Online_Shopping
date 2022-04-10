@@ -12,6 +12,8 @@ import { ListCouponComponent } from './components/Coupon_component/list/list.com
 import { ViewComponent } from './components/Cart_component/view/view.component';
 import { AddProductComponent } from './components/Product_component/add/add.component';
 import { AddAddressComponent } from './components/Address_component/add/add.component';
+import { CheckoutComponent } from './components/Cart_component/checkout/checkout.component';
+import { OrderComponent } from './components/order/order.component';
 const routes: Routes = [
   {path : '',component:ListProductComponent},
   {path:'login',component : LoginComponent},
@@ -25,9 +27,9 @@ const routes: Routes = [
   {path:'viewCart',component:ViewComponent},
   {path:'addAddress',component:AddAddressComponent},
   {path:'listAddresses',component:ListAddressComponent},
-  { path: 'search' , component:ProductSearchComponent }
-
-  
+  { path: 'search' , component:ProductSearchComponent },
+  { path :'checkout', component:CheckoutComponent},
+  {path : 'order', component:OrderComponent}
 ];
 
 @NgModule({

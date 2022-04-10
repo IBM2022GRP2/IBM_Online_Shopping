@@ -15,15 +15,15 @@
     <div class="mb-3">
         <label class="form-label">Product Price</label>
         <input class="form-control" placeholder="Enter Product price" required [(ngModel)]="product.price"
-            [ngModelOptions]="{standalone: true}" pattern="[0-9]{2,}" #artist="ngModel">
-        <div class="invalid-feedback" *ngIf="artist.dirty"> Please provide valid Pricing
+            [ngModelOptions]="{standalone: true}" pattern="[0-9]{2,}" #price="ngModel">
+        <div class="invalid-feedback" *ngIf="price.dirty"> Please provide valid Pricing
         </div>
     </div>
     <div class="mb-3">
         <label class="form-label">Product Stock</label>
         <input class="form-control" placeholder="Enter Product stock" required [(ngModel)]="product.stock"
-            [ngModelOptions]="{standalone: true}" pattern="[0-9]" #artist="ngModel">
-        <div class="invalid-feedback" *ngIf="artist.dirty"> Please provide valid stock
+            [ngModelOptions]="{standalone: true}" pattern="[0-9]{1,}" #stock="ngModel">
+        <div class="invalid-feedback" *ngIf="stock.dirty"> Please provide valid stock
         </div>
     </div>
     <div class="mb-3">

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShoppingCart } from 'src/app/models/cart.model';
 import { Checkout } from 'src/app/models/pojos/checkout.model';
 import { Items } from 'src/app/models/pojos/items.model';
+
 import { User } from 'src/app/models/user.model';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -15,7 +17,7 @@ export class ViewComponent implements OnInit {
   cart : ShoppingCart;
 
   user : User = JSON.parse(localStorage.getItem("regularUser")!);
-  constructor(private cartService : CartService) { 
+  constructor(private cartService : CartService, private router:Router) { 
     this.cart = new ShoppingCart(0,0,this.user)
   }
 
@@ -39,8 +41,8 @@ export class ViewComponent implements OnInit {
     this.cartService.fetchByUser(this.user.userId).then(data=>{
       this.cart = data;
       localStorage.setItem("cart",JSON.stringify(data));
-
-    });
+      } );
+      this.router.navigate(['order']);
     setTimeout(()=>{
       this.ngOnInit();},1000);
   }

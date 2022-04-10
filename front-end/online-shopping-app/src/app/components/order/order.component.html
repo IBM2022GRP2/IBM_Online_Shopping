@@ -1,3 +1,4 @@
+
 <h2>List of Orders</h2>
 <table class="table table-bordered">
     <thead>
@@ -11,7 +12,7 @@
     <tbody>
         <tr *ngFor="let ord of order">
             <td>{{ord.oid}}</td>
-            <td>{{ord.date | date}}</td>
+           <!-- <td>{{ord.value}}</td>-->
             <td>{{ord.totalprice}}</td>
             <td>{{ord.status}}</td>
         </tr>

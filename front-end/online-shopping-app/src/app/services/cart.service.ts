@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { ShoppingCart } from '../models/cart.model';
+import { Order } from '../models/order.model';
 import { Checkout } from '../models/pojos/checkout.model';
 import { Items } from '../models/pojos/items.model';
 import { UserProduct } from '../models/pojos/user.product.model';
@@ -31,13 +32,11 @@ export class CartService {
       data=co;
     });
   }
-
   //fetching a cart when a user logs in
   async fetchByUser(uid : number){
     const cart$ = this.http.get<ShoppingCart>(CartService.url+"/fetchByUserID/"+uid);
     return await firstValueFrom(cart$);
   }
-
   //viewing a cart
   async viewCart(cartid : number){
     const items$ = this.http.get<Items[]>(CartService.url+"/view/"+cartid);
