@@ -41,11 +41,14 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn=true;
         localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
         localStorage.setItem("regularUser", JSON.stringify(this.user));
+        setTimeout(()=>{
+          this.route.navigate(['loginsuccess']).then(()=>{
+            window.location.reload()}
+          )},1000);
       });
       
       
-      setTimeout(()=>{
-      this.route.navigate(['loginsuccess'])},1000);
+     
     }
   }
 

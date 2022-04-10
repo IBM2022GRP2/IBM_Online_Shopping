@@ -17,10 +17,8 @@ export class UserService {
   }
 
   registerUserFromRemote(user: User){
-    // const user$ = this._http.post(UserService.url+"  /signup",user);
     this._http.post(UserService.url+"/signup",user).subscribe(data => {
       data = user;
     });
-    // return await firstValueFrom(user$);
   }
 }

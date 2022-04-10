@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   constructor(public router:Router){}
 
   ngOnInit(): void {
+    
     this.status = JSON.parse(localStorage.getItem("loginStatus")!);
     this.admin = JSON.parse(localStorage.getItem("adminStatus")!);
   }

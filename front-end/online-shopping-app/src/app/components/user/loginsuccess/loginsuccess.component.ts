@@ -21,6 +21,8 @@ export class LoginsuccessComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem("regularUser")!);
+
+
     this.cartService.fetchByUser(this.user.userId).then(data=>{
       localStorage.setItem("cart",JSON.stringify(data));
     })
