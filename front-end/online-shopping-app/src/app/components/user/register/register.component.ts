@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   
   registerUser(){
     this.service.registerUserFromRemote(this.user);
-    this._router.navigate(['/login']); 
+    this._router.navigate(['login']); 
   }
 
 }

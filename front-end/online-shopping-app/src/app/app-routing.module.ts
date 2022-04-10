@@ -6,10 +6,11 @@ import { RegisterComponent } from './components/user/register/register.component
 import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
 import { SearchComponent } from './components/Address_component/search/search.component';
 import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
-
+import { AdminpanelComponent } from './components/user/adminpanel/adminpanel.component';
 const routes: Routes = [
   {path:'login',component : LoginComponent},
   {path:'loginsuccess',component: LoginsuccessComponent},
+  {path:'adminpanel',component: AdminpanelComponent},
   {path:'register',component : RegisterComponent},
   {path:'list',component: ListComponent},
   {path : '',component:RegisterComponent},
