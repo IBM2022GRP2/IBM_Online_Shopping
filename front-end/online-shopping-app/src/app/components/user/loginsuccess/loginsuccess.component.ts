@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-loginsuccess',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginsuccessComponent implements OnInit {
 
-  constructor() { }
+  user : User ;
+  constructor() {
+    this.user = new User(0,"","","","");
+  }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem("regularUser")!);
   }
 
 }
