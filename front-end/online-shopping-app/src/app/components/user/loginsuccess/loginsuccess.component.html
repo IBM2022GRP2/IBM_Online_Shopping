@@ -1,0 +1,35 @@
+<div class="container-fluid mt-3">
+    <div class="card">
+        <table>
+            <tr>
+                <td>
+                    <h4 class="text-secondary display-6">{{user.username}}</h4>
+                    <table>
+                        <tr><td>
+                            <tr><td>Email : {{user.email}}</td></tr>
+                            <tr><td>Phone :{{user.phone_number}}</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<hr>
+<div>
+<ng-template [ngIf]="addressStatus" [ngIfElse]="NoAddress">
+    <div>
+        <list-address></list-address>
+        <button type="submit" class="btn btn-primary" (click)="redirect()">Add Another address</button>
+        
+    </div>
+</ng-template>
+
+<ng-template #NoAddress>
+    <h3>You haven't added any addresses yet. Please Add one  below</h3>
+    <div>
+        <add-address></add-address>
+        <button type="submit" class="btn btn-primary" (click)="ngOnInit()">Submit</button>
+    </div>
+</ng-template>
+</div>

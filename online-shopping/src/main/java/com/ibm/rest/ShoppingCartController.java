@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.ShoppingCart;
+import com.ibm.pojo.Checkout;
+import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 import com.ibm.service.ShoppingCartServcie;
 
@@ -39,9 +41,9 @@ public class ShoppingCartController {
 	}
 	
 	@PostMapping(value="/Checkout",consumes="application/json")
-	public String checkout(@RequestParam int cid,int uid,int adid) {//working
+	public String checkout(@RequestBody Checkout c) {//working
 		try {
-			String oid = service.checkout(cid,uid,adid);
+			String oid = service.checkout(c.getCid(),c.getUid(),c.getAdid());
 			return "Order with ID: "+oid+" has been placed";
 		} catch (Exception e) {
 			return e.getMessage();
@@ -55,7 +57,7 @@ public class ShoppingCartController {
 	}
 	
 	@GetMapping(value="/view/{cartid}",produces="application/json")
-	public List<Object> viewCart(@PathVariable int cartid) {//working
+	public List<Items> viewCart(@PathVariable int cartid) {//working
 		return service.viewCart(cartid);
 	}
 }

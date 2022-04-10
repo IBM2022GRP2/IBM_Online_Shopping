@@ -14,13 +14,13 @@
     <div class="mb-3">
         <label class="form-label">HouseNo:</label>
         <input class="form-control" placeholder="Enter House No" required [(ngModel)]="address.houseno"
-            [ngModelOptions]="{standalone: true}" pattern="[0-9]{3,}" #houseno="ngModel">
+            [ngModelOptions]="{standalone: true}" pattern="[0-9]{1,}" #houseno="ngModel">
         <div class="invalid-feedback" *ngIf="houseno.dirty">Please provide House No.</div>
     </div>
     <div class="mb-3">
         <label class="form-label">Street:</label>
         <input class="form-control" placeholder="Enter Street" required [(ngModel)]="address.street"
-            [ngModelOptions]="{standalone: true}" pattern="[A-Z][a-z]{4,}" #street="ngModel">
+            [ngModelOptions]="{standalone: true}" pattern="[A-Z ][ A-Z a-z ]{4,}" #street="ngModel">
         <div class="invalid-feedback" *ngIf="street.dirty">Please provide Street.</div>
     </div>
     <div class="mb-3">

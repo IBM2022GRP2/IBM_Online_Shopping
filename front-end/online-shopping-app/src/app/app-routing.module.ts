@@ -1,27 +1,33 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/user/login/login.component';
-import { ListComponent } from './components/Product_component/list/list.component';
+import { ListProductComponent } from './components/Product_component/list/list.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
-import { SearchComponent } from './components/Address_component/search/search.component';
+import { ListAddressComponent } from './components/Address_component/search/search.component';
 import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
 import { AdminpanelComponent } from './components/user/adminpanel/adminpanel.component';
+import { AddCouponComponent } from './components/Coupon_component/add/add.component';
+import { ListCouponComponent } from './components/Coupon_component/list/list.component';
+import { ViewComponent } from './components/Cart_component/view/view.component';
+import { AddProductComponent } from './components/Product_component/add/add.component';
+import { AddAddressComponent } from './components/Address_component/add/add.component';
 const routes: Routes = [
   {path:'login',component : LoginComponent},
   {path:'loginsuccess',component: LoginsuccessComponent},
   {path:'adminpanel',component: AdminpanelComponent},
   {path:'register',component : RegisterComponent},
-  {path:'list',component: ListComponent},
+  {path:'addProduct',component:AddProductComponent},
+  {path:'list',component: ListProductComponent},
+  {path:'addCoupon',component : AddCouponComponent},
+  {path:'listCoupon',component : ListCouponComponent},
+  {path:'viewCart',component:ViewComponent},
+  {path:'addAddress',component:AddAddressComponent},
+  {path:'listAddresses',component:ListAddressComponent},
   {path : '',component:RegisterComponent},
   { path: 'search' , component:ProductSearchComponent }
 
-  // [address path]
-  // {path:'',redirectTo:'/add',pathMatch:'full'},
-  // {path:'add',component:AddComponent},
-  // {path:'list',component:ListComponent},
-  // {path:'search',component:SearchComponent},
-  // {path:'**',redirectTo:'/add',pathMatch:'full'}
+  
 ];
 
 @NgModule({

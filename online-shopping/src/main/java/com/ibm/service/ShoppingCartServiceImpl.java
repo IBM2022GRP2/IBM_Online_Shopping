@@ -12,6 +12,7 @@ import com.ibm.entity.Coupon;
 import com.ibm.entity.Order;
 import com.ibm.entity.Product;
 import com.ibm.entity.ShoppingCart;
+import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 import com.ibm.repo.ShoppingCartRepository;
 import com.ibm.util.ProductException;
@@ -53,7 +54,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	}
 	
 	@Override
-	public List<Object> viewCart(int cartid) {
+	public List<Items> viewCart(int cartid) {
 		return repo.viewCart(cartid);
 	}
 	

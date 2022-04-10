@@ -1,10 +1,3 @@
-<form (ngSubmit)="list()">
-  <div class="input-group">
-  <input type="search" class="form-control rounded" placeholder="Search" [(ngModel)]="uid" name="uid" > 
-</div>
-<button type="submit" class="btn btn-outline-primary" >search</button>
-</form>
-
 <table class="table table-bordered">
   <thead>
       <tr>
@@ -17,8 +10,8 @@
 
       </tr>
   </thead>
-  <tbody>
-      <tr *ngFor="let a of address" >
+  <tbody *ngFor="let a of address;let i = index">
+      <tr (click)="select(i)">
           <td>{{a.addressId}}</td>
           <td>{{a.houseNo}}</td>
           <td>{{a.street}}</td>

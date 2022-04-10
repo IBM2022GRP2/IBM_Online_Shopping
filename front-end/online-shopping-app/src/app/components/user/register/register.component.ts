@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/registration.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/services/registration.service';
 })
 export class RegisterComponent implements OnInit {
   user: User;
-  constructor(private service : UserService, private _router : Router) {
+  constructor(private service : UserService,private cartService : CartService, private _router : Router) {
     this.user = new User(0, "", "", "", "");
   }
 
@@ -19,6 +20,7 @@ export class RegisterComponent implements OnInit {
   
   registerUser(){
     this.service.registerUserFromRemote(this.user);
+    this.cartService.createCart(this.user.userId);
     this._router.navigate(['login']); 
   }
 

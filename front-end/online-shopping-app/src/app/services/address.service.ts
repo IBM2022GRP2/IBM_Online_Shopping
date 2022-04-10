@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Address } from '../models/address.model';
-import { UserAddress } from '../models/user.address.model';
+import { UserAddress } from '../models/pojos/user.address.model';
 
 
 @Injectable({

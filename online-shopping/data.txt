@@ -78,6 +78,20 @@ Users -
 	"password":"advil@1234",
 	"phone_number":"4756198674"
 }
+{	
+	"userId":10005,
+	"username":"Florence Smith",
+	"email":"florence@mail.com",
+	"password":"florence@1234",
+	"phone_number":"8790174213"
+}
+{	
+	"userId":10006,
+	"username":"Camela Lopez",
+	"email":"camela@mail.com",
+	"password":"camela@1234",
+	"phone_number":"5641348346"
+}
 Address - 
 {
     "aid":1001,

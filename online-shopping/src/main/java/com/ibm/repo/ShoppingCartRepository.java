@@ -6,14 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.ibm.entity.ShoppingCart;
+import com.ibm.pojo.Items;
 
 public interface ShoppingCartRepository extends JpaRepository<ShoppingCart, Integer> {
 
 	@Query("FROM ShoppingCart WHERE user_id=:uid")
 	ShoppingCart findCartByUserId(int uid);
 	
-	@Query(value="SELECT Product.product_name,Product.category,Product.product_price FROM Product "
-			+ "INNER JOIN cartproduct ON cartproduct.cart_id=:cartid "
-			+ "AND Product.product_id=cartproduct.product_id",nativeQuery = true)
-	List<Object> viewCart(int cartid);
+	@Query(value="SELECT Products.* FROM Products INNER JOIN added_products ON added_products.cart_id=:cartid AND Products.product_id=added_products.product_id",nativeQuery = true)
+	List<Items> viewCart(int cartid);
 }

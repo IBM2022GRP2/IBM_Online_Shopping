@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent implements OnInit {
+export class AddProductComponent implements OnInit {
   product: Product;
   category: string[];
   pname: string[];
