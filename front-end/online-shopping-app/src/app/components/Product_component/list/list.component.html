@@ -1,0 +1,41 @@
+<!-- <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of product">
+            <td>{{a.pid}}</td>
+            <td>{{a.pname}}</td>
+            <td>{{a.stock}}</td>
+            <td>{{a.price}}</td>
+            <td>{{a.category}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="container-fluid mt-3" *ngFor="let p of product;let i = index">
+    <div class="card">
+        <table>
+            <tr>
+                <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt=""></td>
+                <td>
+                    <h4 class="text-secondary display-6">{{p.pname}}</h4>
+                    <table>
+                        <tr><td>
+                            <tr><td>price :{{p.price | currency : "INR"}}</td></tr>
+                            <tr><td>stk :{{p.stock}}</td></tr>
+                            <tr><td>C :{{p.category}}</td></tr></td>
+                    </table>
+                </td>
+                <td><button class="btn btn-primary" type="button" (click)="addToCart(i)">add to cart</button></td>
+            </tr>
+        </table>
+        
+        
+    </div>
+</div>

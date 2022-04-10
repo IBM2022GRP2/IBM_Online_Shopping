@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th>AddressId</th>
+          <th>HouseNo</th> 
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Pincode</th>
+
+      </tr>
+  </thead>
+  <tbody *ngFor="let a of address;let i = index">
+      <tr (click)="select(i)">
+          <td>{{a.addressId}}</td>
+          <td>{{a.houseNo}}</td>
+          <td>{{a.street}}</td>
+          <td>{{a.city}}</td>
+          <td>{{a.state}}</td>
+          <td>{{a.pincode}}</td>
+      </tr>
+  </tbody>
+</table>

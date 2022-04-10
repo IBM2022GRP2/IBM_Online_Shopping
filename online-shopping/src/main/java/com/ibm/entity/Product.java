@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
 * @author Arup Bhattacharjee(@github - 09arup06)
 * @since 0.0.1
@@ -32,6 +34,7 @@ public class Product {
 	private String category;
 
 	//many-to-many relation b/w shoppingcart and product
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name="added_products",
 				joinColumns = {@JoinColumn(name="product_id")},
@@ -39,6 +42,7 @@ public class Product {
 	private List<ShoppingCart> prod_cart = new ArrayList<>();
 	
 	//many to many b/w order and products
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name="ordered_products",
 			joinColumns = {@JoinColumn(name="product_id")},
@@ -86,17 +90,21 @@ public class Product {
 	}
 
 	//for products in a shoppingcart
+	@JsonIgnore
 	public List<ShoppingCart> getProd_cart() {
 		return prod_cart;
 	}
+	@JsonIgnore
 	public void setProd_cart(List<ShoppingCart> prod_cart) {
 		this.prod_cart = prod_cart;
 	}
 
 	//for products in an order
+	@JsonIgnore
 	public List<Order> getProd_ord() {
 		return prod_ord;
 	}
+	@JsonIgnore
 	public void setProd_ord(List<Order> prod_ord) {
 		this.prod_ord = prod_ord;
 	}

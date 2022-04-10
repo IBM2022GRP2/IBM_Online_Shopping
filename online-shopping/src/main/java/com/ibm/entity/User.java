@@ -12,6 +12,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -30,15 +33,19 @@ public class User {
 	private String phone_number;
 	
 	//one to many relation b/w user and order
-//	@JsonManagedReference
+	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy = "userord")
 	private List<Order> user_orders = new ArrayList<>();
 	
 	//one to many relation b/w user and address
+	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy = "useradd")
 	private List<Address> user_addresses = new ArrayList<>();
 	
 	//many to many b/w user and coupon
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name="used_coupons",
 				joinColumns = @JoinColumn(name="user_id"),
@@ -87,25 +94,35 @@ public class User {
 	}
 	
 	//for user_order
+	@JsonManagedReference
+	@JsonIgnore
 	public List<Order> getUser_orders() {
 		return user_orders;
 	}
+	@JsonManagedReference
+	@JsonIgnore
 	public void setUser_orders(List<Order> user_orders) {
 		this.user_orders = user_orders;
 	}
 
 	//for user_address
+	@JsonManagedReference
+	@JsonIgnore
 	public List<Address> getUser_addresses() {
 		return user_addresses;
 	}
+	@JsonManagedReference
+	@JsonIgnore
 	public void setUser_addresses(List<Address> user_addresses) {
 		this.user_addresses = user_addresses;
 	}
 	
 	//for coupons
+	@JsonIgnore
 	public List<Coupon> getUser_coup() {
 		return user_coup;
 	}
+	@JsonIgnore
 	public void setUser_coup(List<Coupon> user_coup) {
 		this.user_coup = user_coup;
 	}

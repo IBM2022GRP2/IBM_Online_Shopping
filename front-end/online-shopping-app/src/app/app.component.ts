@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginComponent } from './components/user/login/login.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'online-shopping-app';
+  status : boolean = false;
+  admin : boolean = false;
+  constructor(public router:Router){}
+
+  ngOnInit(): void {
+    
+    this.status = JSON.parse(localStorage.getItem("loginStatus")!);
+    this.admin = JSON.parse(localStorage.getItem("adminStatus")!);
+  }
+
+  goToCart(){
+    this.router.navigate(['viewCart']);
+  }
+  logout(){
+    localStorage.clear();
+    this.status = false;
+    this.router.navigate(['login']);
+  }
 }

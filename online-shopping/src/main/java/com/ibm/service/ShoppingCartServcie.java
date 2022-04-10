@@ -3,6 +3,7 @@ package com.ibm.service;
 import java.util.List;
 
 import com.ibm.entity.ShoppingCart;
+import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 
 public interface ShoppingCartServcie {
@@ -11,7 +12,7 @@ public interface ShoppingCartServcie {
 	
 	ShoppingCart fetchCart(int uid);
 	
-	List<Object> viewCart(int uid);
+	List<Items> viewCart(int uid);
 	
 	double addToCart(UserProduct up) throws Exception;
 	

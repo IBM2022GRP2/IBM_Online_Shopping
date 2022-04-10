@@ -39,29 +39,29 @@ public class ProductController {
 			return "failed to update";
 	}
 	
-	@GetMapping(value="/fetch/{pid}",consumes="application/json")
+	@GetMapping(value="/fetch/{pid}",produces="application/json")
 	public Product fetchByID(@PathVariable int pid) {
 		return service.fetchByID(pid);
 	}
 	
-	@GetMapping(value="/list",consumes="application/json")
+	@GetMapping(value="/list",produces="application/json")
 	public List<Product> list(){
 		return service.list();
 	}
 	
-	@GetMapping(value="/byCategory/{category}",consumes="application/json")
+	@GetMapping(value="/byCategory/{category}",produces="application/json")
 	public List<Product> findByCategory(@PathVariable String category) {
 		return service.byCategory(category);
 	}
 	
 	
-	@GetMapping(value="/byName/{pname}",consumes="application/json")
+	@GetMapping(value="/byName/{pname}",produces="application/json")
 	public List<Product> findbyName(@PathVariable String pname) {
 		return service.byName(pname);
 	}
 	
 
-	@GetMapping(value="/byPriceRange",consumes="application/json")
+	@GetMapping(value="/byPriceRange",produces="application/json")
 	public List<Product>findByPriceRange(@RequestParam double lowp,@RequestParam double highp) {
 		return service.byPriceRange(lowp, highp);
 	}

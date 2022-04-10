@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * @author Mrinal Samanta(@github - Mrinal_Delta)
@@ -28,6 +30,7 @@ public class ShoppingCart {
 	private double total_price;
 	
 	//many-to-many relation b/w shoppingcart and product
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name="added_products",
 				joinColumns = {@JoinColumn(name="cart_id")},
@@ -55,9 +58,11 @@ public class ShoppingCart {
 	}
 
 	//for products in a cart
+	@JsonIgnore
 	public List<Product> getShop_cart() {
 		return shop_cart;
 	}
+	@JsonIgnore
 	public void setShop_cart(List<Product> shop_cart) {
 		this.shop_cart = shop_cart;
 	}

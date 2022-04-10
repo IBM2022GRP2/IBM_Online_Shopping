@@ -10,6 +10,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
 * @author Mrinal Samanta(@github - Mrinal_Delta)
@@ -28,6 +30,7 @@ public class Coupon {
 	private double discount;
 	
 	//many to many relation b/w coupon and users
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name="used_coupons",
 				joinColumns = @JoinColumn(name="coupon_id"),
@@ -59,9 +62,11 @@ public class Coupon {
 	}
 
 	//for user and coupon 
+	@JsonIgnore
 	public List<User> getCoup_user() {
 		return coup_user;
 	}
+	@JsonIgnore
 	public void setCoup_user(List<User> coup_user) {
 		this.coup_user = coup_user;
 	}

@@ -5,20 +5,56 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { ComponentsComponent } from './order/components/components.component';
 import { OrderComponent } from './components/order/order.component';
+=======
+import { ListProductComponent } from './components/Product_component/list/list.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { LoginsuccessComponent } from './components/user/loginsuccess/loginsuccess.component';
+import { AddAddressComponent } from './components/Address_component/add/add.component';
+import { ListAddressComponent } from './components/Address_component/search/search.component';
+import { ProductSearchComponent } from './components/Product_component/product-search/product-search.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminpanelComponent } from './components/user/adminpanel/adminpanel.component';
+import { ViewComponent } from './components/Cart_component/view/view.component';
+import { CheckoutComponent } from './components/Cart_component/checkout/checkout.component';
+import { AddCouponComponent } from './components/Coupon_component/add/add.component';
+import { ListCouponComponent } from './components/Coupon_component/list/list.component';
+import { AddProductComponent } from './components/Product_component/add/add.component';
+
+>>>>>>> 2faa68eadb41de14dd630a34eaff9a1c44e7520c
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     ComponentsComponent,
     OrderComponent
+=======
+    AddProductComponent,
+    ListProductComponent,
+    RegisterComponent,
+    LoginComponent,
+    LoginsuccessComponent,
+    AddAddressComponent,
+    ListAddressComponent,
+    ProductSearchComponent,
+    AdminpanelComponent,
+    ViewComponent,
+    CheckoutComponent,
+    AddCouponComponent,
+    ListCouponComponent
+    
+>>>>>>> 2faa68eadb41de14dd630a34eaff9a1c44e7520c
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
