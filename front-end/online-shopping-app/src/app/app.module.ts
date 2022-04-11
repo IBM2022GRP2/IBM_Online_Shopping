@@ -20,6 +20,7 @@ import { CheckoutComponent } from './components/Cart_component/checkout/checkout
 import { AddCouponComponent } from './components/Coupon_component/add/add.component';
 import { ListCouponComponent } from './components/Coupon_component/list/list.component';
 import { AddProductComponent } from './components/Product_component/add/add.component';
+import { HomeComponent } from './components/Home_component/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AddProductComponent } from './components/Product_component/add/add.comp
     ViewComponent,
     CheckoutComponent,
     AddCouponComponent,
-    ListCouponComponent
+    ListCouponComponent,
+    HomeComponent
     
   ],
   imports: [

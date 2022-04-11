@@ -8,7 +8,7 @@ import { LoginComponent } from './components/user/login/login.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'online-shopping-app';
+  title = 'Fragnance World';
   status : boolean = false;
   admin : boolean = false;
   constructor(public router:Router){}

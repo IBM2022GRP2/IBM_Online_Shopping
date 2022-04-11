@@ -14,8 +14,9 @@ import { AddProductComponent } from './components/Product_component/add/add.comp
 import { AddAddressComponent } from './components/Address_component/add/add.component';
 import { CheckoutComponent } from './components/Cart_component/checkout/checkout.component';
 import { OrderComponent } from './components/order/order.component';
+import { HomeComponent } from './components/Home_component/home/home.component';
 const routes: Routes = [
-  {path : '',component:ListProductComponent},
+  {path : '',component:HomeComponent},
   {path:'login',component : LoginComponent},
   {path:'loginsuccess',component: LoginsuccessComponent},
   {path:'adminpanel',component: AdminpanelComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'listAddresses',component:ListAddressComponent},
   { path: 'search' , component:ProductSearchComponent },
   { path :'checkout', component:CheckoutComponent},
-  {path : 'order', component:OrderComponent}
+  {path : 'order', component:OrderComponent},
+
 ];
 
 @NgModule({
