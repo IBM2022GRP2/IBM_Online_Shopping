@@ -39,25 +39,22 @@
     <div class="container-fluid">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Store</a>
+                <a class="nav-link" [routerLink]="['']" ><h3>Store</h3></a>
             </li>
             <li class="nav-item">
-                <button class="nav-link">
-                    <img src="https://www.pxpng.com/public/uploads/preview/-216331814244q8xkwcp39.png" width="30"
-                        height="5">
-                </button>
-               
-            </li>
-            <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a type="button" class="fa fa-fw fa-search btn btn-light" [routerLink]="['search']"  >
+                    <img src="https://www.pxpng.com/public/uploads/preview/-216331814244q8xkwcp39.png"
+                        style="height: 40px;">
+                </a>
             </li>
         </ul>
     </div>
 </nav>
 
+<br>
 <!--GAallery-->
-<div class="gallery container-fluid"  >
+
+<div class="gallery" style="margin-left: 70px;" >
         <a target="_blank">
         <img src="https://images.unsplash.com/photo-1619994403073-2cec844b8e63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcmZ1bWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
             alt="Cinque Terre" width="600" height="400">
@@ -91,4 +88,19 @@
     </a>
     <div class="desc">Add a description of the image here</div>
 </div>
+<div class="gallery" >
+    <a target="_blank" >
+        <img src="https://images.unsplash.com/photo-1608528577891-eb055944f2e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fHBlcmZ1bWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
 </div>
+<div class="gallery" style="margin-right: 70px;">
+    <a target="_blank"  >
+        <img src="https://images.unsplash.com/photo-1618478441890-8d4e722fe882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcmZ1bWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+</div>
+
+</div>
+
+
