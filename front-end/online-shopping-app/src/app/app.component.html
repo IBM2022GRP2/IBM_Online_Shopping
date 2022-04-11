@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
   <div class="container-fluid">
-    <ul class="navbar-nav" >
+    <ul class="navbar-nav">
       <li class="nev-item">
-        <a class="nav-link active" >Badhiya Store</a>
+        <a class="nav-link active">Badhiya Store</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" *ngIf="!status" [routerLink]="['register']">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  *ngIf="!status" [routerLink]="['login']">Login</a>
+        <a class="nav-link" *ngIf="!status" [routerLink]="['login']">Login</a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" [routerLink]="['list']">List Products</a>
@@ -17,9 +17,9 @@
         <a class="nav-link" [routerLink]="['search']">Search Products</a>
       </li>
     </ul>
-    <ul class="navbar-nav ms-auto" >
-      <li class="nav-item" id ="admin" *ngIf="status && admin" >
-        <div ngbDropdown class="d-inline-block" >
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item" id="admin" *ngIf="status && admin">
+        <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Admin</button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem [routerLink]="['addProduct']">Add Product</button>
@@ -30,32 +30,97 @@
         </div>
       </li>
 
-      <li class="nav-item" id="regular" *ngIf="status" >
-        <div ngbDropdown class="d-inline-block" >
-         
+      <li class="nav-item" id="regular" *ngIf="status">
+        <div ngbDropdown class="d-inline-block">
+
           <button type="button" class="btn button" id="dropdownBasic1" ngbDropdownToggle> <a>
-            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" width="40" height="40" class="rounded-circle">
-          </a></button>
+              <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" width="40" height="40"
+                class="rounded-circle">
+            </a></button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem *ngIf="!admin" (click)="goToCart()">Cart</button>
             <!-- <button ngbDropdownItem>Orders</button> -->
             <button ngbDropdownItem *ngIf="!admin" [routerLink]="['loginsuccess']">Profile</button>
-            <button ngbDropdownItem (click) = "logout()">Logout</button>
+            <button ngbDropdownItem (click)="logout()">Logout</button>
           </div>
         </div>
       </li>
-      
 
-      
+
+
     </ul>
-    
+
   </div>
 </nav>
 <br>
 <hr>
-
-
-
 <div class="container-fluid">
   <router-outlet></router-outlet>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>TeamSahiHai
+            </h6>
+            <p>
+              We are a perfume destination for the contemporary Indian who seeks authentic brand experiences. As the
+              official online platform for International brands like Park Avenue, Denver, Axe Signature, Engage, Wild
+              Stone, Calvin Klein, Fogg. we not only showcase the largest width of
+              merchandise for these brands but also offer the freshest in-season products.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 text-center">
+              Products
+            </h6>
+            <p class="text-center">
+              <button ngbDropdownItem [routerLink]="['list']" class="text-reset">All Products</button>
+            </p>
+          </div>
+          
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p>157/F, Nilgunj Rd, Sahid Colony, Panihati, Kolkata, West Bengal 700114</p>
+            <p>
+              
+              teamsahihai@gmail.com
+            </p>
+            <p> +91 7800275955</p>
+            <p> +91 9876741456</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="http://localhost:4200/">TeamSahiHai.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 </div>
