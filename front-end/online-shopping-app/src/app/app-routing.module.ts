@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'search' , component:ProductSearchComponent },
   { path :'checkout', component:CheckoutComponent},
   {path : 'order', component:OrderComponent},
+  {path:'checkout',component:CheckoutComponent}
 
 ];
 

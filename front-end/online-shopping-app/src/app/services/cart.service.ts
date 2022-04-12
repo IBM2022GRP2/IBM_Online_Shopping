@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { ShoppingCart } from '../models/cart.model';
@@ -28,8 +28,9 @@ export class CartService {
 
   //placing an order
   checkOut(co : Checkout){
-    this.http.post(CartService.url+"/Checkout",co).subscribe(data=>{
-      data=co;
+    this.http.post(CartService.url+"/Checkout",co).subscribe({
+      next :(data)=>{data=co;},
+      error:(error : HttpErrorResponse)=>{localStorage.setItem("order",JSON.stringify(error.error.text))}
     });
   }
   //fetching a cart when a user logs in

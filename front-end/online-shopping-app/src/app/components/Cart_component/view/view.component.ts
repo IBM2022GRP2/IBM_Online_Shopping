@@ -41,8 +41,10 @@ export class ViewComponent implements OnInit {
     this.cartService.fetchByUser(this.user.userId).then(data=>{
       this.cart = data;
       localStorage.setItem("cart",JSON.stringify(data));
+      setTimeout(()=>{
+        // this.ngOnInit();
+        this.router.navigate(['checkout']);
+      },1000);
       } );
-    setTimeout(()=>{
-      this.ngOnInit();},1000);
   }
 }

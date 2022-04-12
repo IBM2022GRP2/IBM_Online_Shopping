@@ -1,7 +1,7 @@
 package com.ibm.service;
 
 import com.ibm.entity.Order;
-
+import com.ibm.pojo.Items;
 import com.ibm.repo.OrderRepository;
 
 import java.util.List;
@@ -24,6 +24,11 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public List<Order> fetchAllByUserId(int userid){
 		return repo.findAllByUser(userid);
+	}
+
+	@Override
+	public List<Items> viewProducts(String order_id) {
+		return repo.viewProducts(order_id);
 	}
 
 }

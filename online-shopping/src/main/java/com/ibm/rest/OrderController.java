@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Order;
-
+import com.ibm.pojo.Items;
 import com.ibm.service.OrderService;
 
 @CrossOrigin
@@ -26,4 +26,8 @@ public class OrderController {
 		return service.fetchAllByUserId(uid);
 	}
 
+	@GetMapping(value="/details/{order_id}",produces="application/json")
+	public List<Items> viewDetails(@PathVariable String order_id){
+		return service.viewProducts(order_id);
+	}
 }
