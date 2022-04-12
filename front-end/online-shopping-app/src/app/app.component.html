@@ -45,7 +45,7 @@
             </a></button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem *ngIf="!admin" (click)="goToCart()">Cart</button>
-            <!-- <button ngbDropdownItem>Orders</button> -->
+            
             <button ngbDropdownItem *ngIf="!admin" [routerLink]="['loginsuccess']">Profile</button>
             <button ngbDropdownItem (click)="logout()">Logout</button>
           </div>
@@ -65,15 +65,12 @@
   <router-outlet></router-outlet>
   
 </div>
+
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
-  <!-- Section: Social media -->
-
-  <!-- Section: Social media -->
-
   <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
+  <section class="container-fluid">
+    <div class="container container-fluid text-center text-md-start mt-5 " >
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
@@ -128,6 +125,7 @@
     © 2022 Copyright:
     <a class="text-reset fw-bold" href="http://localhost:4200/">TeamSahiHai.com</a>
   </div>
+
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
