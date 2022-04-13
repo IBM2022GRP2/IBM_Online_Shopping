@@ -3,15 +3,20 @@
     <thead>
         <tr>
             <th>Item Name</th>
-            <th>Item Price</th>
             <th>Quantity</th>
+            <th>Item Price</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let i of item">
             <td>{{i.pname}}</td>
-            <td>{{i.price}}</td>
             <td>1</td>
+            <td>{{i.price}}</td>
+        </tr>
+        <tr>
+            <td>Total Price</td>
+            <td></td>
+            <td>{{order.totalprice}}</td>
         </tr>
     </tbody>
 </table>

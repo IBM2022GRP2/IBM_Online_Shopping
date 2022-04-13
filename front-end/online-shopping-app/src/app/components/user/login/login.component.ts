@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Route, Router } from '@angular/router';
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   login : Login;
   isLoggedIn:Boolean=false;
   isAdmin : boolean = false;
+  message : string = "";
   constructor(private service: UserService, private route: Router) {
     this.user = new User(0, "", "", "", "");
     this.login = new Login("","");
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.route.navigate(['adminpanel']).then(()=>{window.location.reload()});
     }
     else{
-      this.service.loginUserFromRemote(this.login).then(data => {
+      this.service.loginUserFromRemote(this.login).then((data) => {
         this.user = data;
         this.isLoggedIn=true;
         localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
@@ -45,6 +47,9 @@ export class LoginComponent implements OnInit {
           this.route.navigate(['loginsuccess']).then(()=>{
             window.location.reload()}
           )},1000);
+      },
+      (error : HttpErrorResponse)=>{
+        this.message = error.error.message;
       });
       
       

@@ -13,4 +13,4 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.message = JSON.parse(localStorage.getItem("order")!);
   }
-  }
+}

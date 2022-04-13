@@ -3,6 +3,8 @@ package com.ibm.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.User;
 import com.ibm.pojo.Login;
 import com.ibm.service.UserService;
+import com.ibm.util.InvalidUserException;
 
 @CrossOrigin
 @RestController
@@ -49,7 +52,11 @@ public class UserController {
 	}
 	
 	@PostMapping(value="/login",consumes="application/json")
-	public User validate(@RequestBody Login l){
-		return service.validate(l.getEmail(), l.getPass());
+	public ResponseEntity<User> validate(@RequestBody Login l) throws InvalidUserException{
+		User u = service.validate(l.getEmail(), l.getPass());
+		if(u!=null)
+			return new ResponseEntity<User>(u,HttpStatus.OK);
+		else
+			throw new InvalidUserException("Kindly check if your email and passwrod are valid...");
 	}
 }

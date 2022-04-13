@@ -22,6 +22,7 @@ export class AddProductComponent implements OnInit {
   }
   save() {
     this.service.addProduct(this.product);
-    this.router.navigate(['list']);
+    setTimeout(()=>{
+    this.router.navigate(['list']);},1000);
   }
 }

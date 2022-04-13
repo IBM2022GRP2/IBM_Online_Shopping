@@ -28,6 +28,6 @@ export class AppComponent implements OnInit{
   logout(){
     localStorage.clear();
     this.status = false;
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 }

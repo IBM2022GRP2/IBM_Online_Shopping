@@ -21,4 +21,9 @@ export class UserService {
       data = user;
     });
   }
+
+  async findall(){
+    const u$ = this._http.get<User[]>(UserService.url+"/listuser");
+    return await firstValueFrom(u$);
+  }
 }

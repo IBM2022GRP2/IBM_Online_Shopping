@@ -28,6 +28,9 @@
               <a href="#!">Forgot password?</a>
             </div>
   
+            <div *ngIf="!isLoggedIn">
+              <p class="alert-danger">{{message}}</p>
+            </div>
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
   

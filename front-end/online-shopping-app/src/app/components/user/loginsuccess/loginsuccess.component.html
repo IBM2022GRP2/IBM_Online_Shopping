@@ -20,21 +20,21 @@
 
 <hr>
 <div>
-<ng-template [ngIf]="addressStatus" [ngIfElse]="NoAddress">
+<div *ngIf="!addressStatus" style="width: 80%;">
     <div>
         <list-address></list-address>
         <button type="submit" class="btn btn-primary" (click)="redirect()">Add Another address</button>
         
     </div>
-</ng-template>
+</div>
 
-<ng-template #NoAddress>
+<div class="container-fluid" *ngIf="addressStatus" style="width: 80%; text-align: center;">
     <h3>You haven't added any addresses yet. Please Add one  below</h3>
-    <div>
+    <div style="width: 50%; margin: auto;">
         <add-address></add-address>
-        <button type="submit" class="btn btn-primary" (click)="ngOnInit()">Submit</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 5px;" (click)="refresh()">Submit</button>
     </div>
-</ng-template>
+</div>
 </div>
 <div>
     

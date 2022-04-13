@@ -69,9 +69,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 		if(p.getStock()<1) {
 			throw new ProductException("Product Out of stock.");
 		}
-		else if(p == null){
-			throw new ProductException("Product can't be found");
-		}
 		else if(cart.getShop_cart().contains(p)) {
 			throw new ShoppingCartException("Can't add one product more than once");
 		}

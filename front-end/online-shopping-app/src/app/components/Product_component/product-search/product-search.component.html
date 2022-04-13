@@ -1,9 +1,9 @@
-<div style="float: left; display: inline-flex;" class="container-fluid">
+<div style=" display: inline-flex;justify-content: center;" class="container-fluid">
     <form (ngSubmit)="search()" #addForm="ngForm">
         <div class="mb-3 mt-3">
             <label for="category" class="form-label">Search</label>
             <input type="text" class="form-control" id="pname" placeholder="Product Name/Category" name="pname"
-                pattern="[a-zA-Z ]{2,}" [(ngModel)]="f" #pname="ngModel">
+                pattern="[a-z A-Z ]{2,}" [(ngModel)]="f" #pname="ngModel">
             <button type="submit" class="btn btn-primary" [disabled]="!addForm.valid">Submit</button>
         </div>
     </form>

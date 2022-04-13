@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Address } from 'src/app/models/address.model';
 import { UserAddress } from 'src/app/models/pojos/user.address.model';
+import { User } from 'src/app/models/user.model';
 import { AddressService } from 'src/app/services/address.service';
 
 @Component({
@@ -12,15 +13,20 @@ import { AddressService } from 'src/app/services/address.service';
 export class AddAddressComponent implements OnInit {
   address : UserAddress;
   state : string[];
-  
+  num : number = 0;
+  user : User = JSON.parse(localStorage.getItem("regularUser")!);
   constructor(private service : AddressService,private router : Router) { 
-    this.address = new UserAddress(0,0,0,'','','',0);
+    this.address = new UserAddress(0,this.user.userId,0,'','','',0);
     this.state =  ["Andhra Pradesh","Goa","West Bengal","Bihar","Kerala"];
    
   }
 
   ngOnInit(): void {
-    
+    this.service.ListAllAddress().then((data)=>{
+      this.num = data.map(x=>x.addressId)[data.map(x=>x.addressId).length-1]+1;
+      console.log(this.num);
+      this.address.aid = this.num;
+    })
   }
 
   add(){

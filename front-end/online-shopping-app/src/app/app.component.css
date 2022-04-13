@@ -6,10 +6,9 @@
 	transition:0.8 ease;
 }
 .head{
-    background-color: dodgerblue;
+    background-color: transparent;
 }
 .navbar-light .navbar-brand {
-    color: rgba(255, 255, 255, 0.9);
     font-weight: 700;
     font-size: 30px;
     text-transform: uppercase;
@@ -37,6 +36,12 @@
     color: #e91e63;
 }
 
+.navbar-nav .nav-item .nav-link{
+    color: #F7F7F7;
+    font-family: 'Oooh Baby', cursive;
+    font-weight: bolder;
+    font-size: 25px;
+}
 .dropdown-menu {
     padding: 0px;
 }

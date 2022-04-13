@@ -37,8 +37,11 @@ export class ProductSearchComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem("regularUser")!);
     this.loginStatus = JSON.parse(localStorage.getItem("loginStatus")!)
   }
+
+  //searches products by name and category
   search() {
-    if (this.categoryl.includes(this.f)) {
+    //this works with both lower and uppercase category input
+    if (this.categoryl.includes(this.f.charAt(0).toUpperCase()+this.f.slice(1))) {
       this.service.findByCategory(this.f).then(data => {
         this.product = data;
       });
@@ -49,18 +52,19 @@ export class ProductSearchComponent implements OnInit {
       });
     }
   }
+  // searches product by price range 
   searchbyrange() {
     this.service.findByPriceRange(this.lowp, this.highp).then(data => {
       this.product = data;
     })
   }
 
+  //adds product ot cart
   addToCart(idx : number){
      this.cartService.addToCart(new UserProduct(this.user.userId,this.product[idx].pid));
      setTimeout(()=>{
        this.ngOnInit();
        this.searchbyrange();
-      
      },1000);
   }
 }

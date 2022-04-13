@@ -1,13 +1,13 @@
 <form (ngSubmit)="add()" class="was-validated" #addForm="ngForm" style="margin-top:50px">
     <div class="mb-3 mt-3">
         <label class="form-label">Address Id:</label>
-        <input class="form-control" placeholder="Enter Address Id" required [(ngModel)]="address.aid"
+        <input class="form-control" placeholder="Enter Address Id" required value="num" [(ngModel)]="address.aid"
             [ngModelOptions]="{standalone: true}" pattern="[0-9]{1,}" #aid="ngModel">
         <div class="invalid-feedback" *ngIf="aid.dirty">Please provide Address Id.</div>
     </div>
     <div class="mb-3">
         <label class="form-label">User Id:</label>
-        <input class="form-control" placeholder="Enter User Id" required [(ngModel)]="address.uid"
+        <input class="form-control" placeholder="Enter User Id" required value="user.userId" [(ngModel)]="address.uid"
             [ngModelOptions]="{standalone: true}" pattern="[0-9]{2,}" #uid="ngModel">
         <div class="invalid-feedback" *ngIf="uid.dirty">Please provide User Id.</div>
     </div>

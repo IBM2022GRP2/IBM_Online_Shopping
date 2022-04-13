@@ -1,4 +1,3 @@
-
 <div class="container-fluid mt-3" *ngFor="let p of product;let i = index">
     <div class="card">
         <table>
@@ -9,11 +8,17 @@
                     <table>
                         <tr><td>
                             <tr><td>Price :{{p.price | currency : "INR"}}</td></tr>
+                            <tr *ngIf="admin"><td>Product Id :{{p.pid}}</td></tr>
                             <tr><td>Stock :{{p.stock}}</td></tr>
                             <tr><td>Category :{{p.category}}</td></tr></td>
                     </table>
                 </td>
-                <td><button class="btn btn-primary" type="button" (click)="addToCart(i)">add to cart</button></td>
+                <td><button class="btn btn-primary" type="button" *ngIf="product[i].stock !== 0" (click)="addToCart(i)">add to cart</button></td>
+            </tr>
+            <tr *ngIf="product[i].stock === 0">
+                <div >
+                    <p class="alert-danger">This product is out of Stock</p>
+                </div>
             </tr>
         </table>
         

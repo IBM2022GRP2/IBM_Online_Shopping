@@ -21,8 +21,12 @@ export class CartService {
 
   //adding items to cart
   addToCart(up : UserProduct){
-    this.http.post(CartService.url+"/addToCart",up).subscribe(data=>{
-      data = up;
+    this.http.post(CartService.url+"/addToCart",up).subscribe(
+      {next : (data)=>{data = up;},
+      error : (error : HttpErrorResponse)=>{
+        if(error.error.text!=undefined)
+          alert(error.error.text);
+      }
     });
   }
 

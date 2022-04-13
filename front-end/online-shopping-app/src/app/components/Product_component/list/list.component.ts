@@ -16,22 +16,26 @@ export class ListProductComponent implements OnInit {
   product: Product[] = [];
   user : User = new User(0,"","","","");
   loginStatus : boolean = false;
+  admin : boolean = false;
   constructor(private service: ProductService,private cartService : CartService,private router : Router) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem("regularUser")!);
     this.loginStatus = JSON.parse(localStorage.getItem("loginStatus")!)
+    this.admin = JSON.parse(localStorage.getItem("adminStatus")!)
     this.service.List().then(data => {
       this.product = data;
     })
   }
 
   addToCart(idx : number){
-    
-     this.cartService.addToCart(new UserProduct(this.user.userId,this.product[idx].pid));
-     setTimeout(()=>{
-       this.ngOnInit();
-     },1000);
-
+    if(this.loginStatus){
+      this.cartService.addToCart(new UserProduct(this.user.userId,this.product[idx].pid));
+      setTimeout(()=>{
+        this.ngOnInit();
+      },1000);
+    }else{
+      this.router.navigate(['login']);
+    }
   }
 }
