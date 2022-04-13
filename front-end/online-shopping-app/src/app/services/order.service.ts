@@ -20,7 +20,7 @@ export class OrderService {
   }
 
   async viewProducts(oid: String){
-    const item$=this.http.get<Items[]>(OrderService.url+"/get/"+oid);
+    const item$=this.http.get<Items[]>(OrderService.url+"/details/"+oid);
     return await firstValueFrom(item$);
   }
 }

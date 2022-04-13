@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/models/order.model';
 import { Items } from 'src/app/models/pojos/items.model';
-import { Product } from 'src/app/models/product.model';
 import { User } from 'src/app/models/user.model';
 import { OrderService } from 'src/app/services/order.service';
 

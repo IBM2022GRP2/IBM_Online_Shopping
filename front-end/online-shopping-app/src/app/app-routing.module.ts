@@ -15,6 +15,7 @@ import { AddAddressComponent } from './components/Address_component/add/add.comp
 import { CheckoutComponent } from './components/Cart_component/checkout/checkout.component';
 import { OrderComponent } from './components/order/order.component';
 import { HomeComponent } from './components/Home_component/home/home.component';
+import { DetailComponent } from './components/order/detail/detail.component';
 const routes: Routes = [
   {path : '',component:HomeComponent},
   {path:'login',component : LoginComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'search' , component:ProductSearchComponent },
   { path :'checkout', component:CheckoutComponent},
   {path : 'order', component:OrderComponent},
-  {path:'checkout',component:CheckoutComponent}
+  {path:'checkout',component:CheckoutComponent},
+  {path: 'orderitem', component:DetailComponent}
 
 ];
 
