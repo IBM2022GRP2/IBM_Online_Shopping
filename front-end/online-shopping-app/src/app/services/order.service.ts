@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Order } from '../models/order.model';
+import { Items } from '../models/pojos/items.model';
+import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +17,10 @@ export class OrderService {
   async getByUserId(uid: number){
     const order$= this.http.get<Order[]>(OrderService.url+"/get/"+uid);
     return await firstValueFrom(order$);
+  }
+
+  async viewProducts(oid: String){
+    const item$=this.http.get<Items[]>(OrderService.url+"/get/"+oid);
+    return await firstValueFrom(item$);
   }
 }

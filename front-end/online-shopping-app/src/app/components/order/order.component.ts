@@ -22,4 +22,8 @@ export class OrderComponent implements OnInit {
     })
   }
 
+  fetchOrder(idx: number){
+    localStorage.setItem("orderitem",JSON.stringify(this.order[idx]))
+  }
+
 }

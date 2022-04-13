@@ -9,8 +9,8 @@
             <th>Order Status</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let ord of order">
+    <tbody >
+        <tr *ngFor="let ord of order; let i= index" (click)="fetchOrder(i)">
             <td>{{ord.oid}}</td>
             <td>{{ord.date}}</td>
             <td>{{ord.totalprice}}</td>

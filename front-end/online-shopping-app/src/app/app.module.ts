@@ -21,6 +21,7 @@ import { AddCouponComponent } from './components/Coupon_component/add/add.compon
 import { ListCouponComponent } from './components/Coupon_component/list/list.component';
 import { AddProductComponent } from './components/Product_component/add/add.component';
 import { HomeComponent } from './components/Home_component/home/home.component';
+import { DetailComponent } from './components/order/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HomeComponent } from './components/Home_component/home/home.component';
     CheckoutComponent,
     AddCouponComponent,
     ListCouponComponent,
-    HomeComponent
+    HomeComponent,
+    DetailComponent
     
   ],
   imports: [
