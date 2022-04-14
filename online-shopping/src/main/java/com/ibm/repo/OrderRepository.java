@@ -8,6 +8,13 @@ import org.springframework.data.jpa.repository.Query;
 import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
 
+/**
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+* 
+* This is Order related repository
+**/
+
 public interface OrderRepository extends JpaRepository<Order, Integer> {
 	
 	@Query("FROM Order Where user_id=:uid")

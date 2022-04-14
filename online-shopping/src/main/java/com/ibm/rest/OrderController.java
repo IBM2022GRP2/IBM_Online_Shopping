@@ -13,6 +13,12 @@ import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
 import com.ibm.service.OrderService;
 
+/**
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+* 
+* This is Order related Controller class
+**/
 @CrossOrigin
 @RestController
 @RequestMapping(value="Order")

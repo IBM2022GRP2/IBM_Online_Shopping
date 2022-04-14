@@ -12,6 +12,7 @@ import com.ibm.entity.Coupon;
 import com.ibm.entity.Order;
 import com.ibm.entity.Product;
 import com.ibm.entity.ShoppingCart;
+import com.ibm.entity.User;
 import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 import com.ibm.repo.ShoppingCartRepository;
@@ -38,6 +39,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	
 	@Autowired 
 	private UserService userserv;
+	
+	@Autowired
+	private EmailServiceImpl emailservice;
 	
 	//used to create an shopping cart for an user for the first time
 	@Override
@@ -109,6 +113,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 			cart.getShop_cart().clear();
 			cart.setTotal_price(0);
 			repo.save(cart);
+			
+			//Sending mail whenever user checkout/confirms the order
+			String msg = "Hello "+userserv.fetch(uid).getUsername()+" ! \n Thankyou for placing order. \n Your Order is : "+(ord.getOid())+"\n Your order will be delivered on: "+ord.getDate().plusDays(3) ;
+			String sub= "Order Placed";
+			emailservice.sendEmail(userserv.fetch(uid).getEmail(),sub,msg);
 			
 			return ord.getOid();
 		}

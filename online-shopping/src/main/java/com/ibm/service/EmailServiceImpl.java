@@ -5,6 +5,15 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+
+/**
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+* 
+* This is Email Related Implemented Service Class
+**/
+
+
 @Service
 public class EmailServiceImpl implements EmailService{
 	
