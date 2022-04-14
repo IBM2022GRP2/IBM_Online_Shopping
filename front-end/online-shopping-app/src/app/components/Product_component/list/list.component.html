@@ -1,27 +1,33 @@
-<div class="container-fluid mt-3" *ngFor="let p of product;let i = index">
-    <div class="card">
-        <table>
-            <tr>
-                <td><img src="https://m.media-amazon.com/images/I/61KQbRUxsgL._SL1500_.jpg" alt=""></td>
-                <td>
-                    <h4 class="text-secondary display-6">{{p.pname}}</h4>
-                    <table>
-                        <tr><td>
-                            <tr><td>Price :{{p.price | currency : "INR"}}</td></tr>
-                            <tr *ngIf="admin"><td>Product Id :{{p.pid}}</td></tr>
-                            <tr><td>Stock :{{p.stock}}</td></tr>
-                            <tr><td>Category :{{p.category}}</td></tr></td>
-                    </table>
-                </td>
-                <td><button class="btn btn-primary" type="button" *ngIf="product[i].stock !== 0" (click)="addToCart(i)">add to cart</button></td>
-            </tr>
-            <tr *ngIf="product[i].stock === 0">
-                <div >
-                    <p class="alert-danger">This product is out of Stock</p>
-                </div>
-            </tr>
-        </table>
-        
-        
+<section class="section-products">
+    <div class="container">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header">
+                                    <h3>Featured Product</h3>
+                                    <h2>Popular Products</h2>
+                            </div>
+                    </div>
+            </div>
+            <div class="container-fluid row">
+                    <!-- Single Product -->
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div id="product-1" class="single-product" *ngFor="let p of product">
+                                    <div class="part-1">
+                                            <ul>
+                                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="part-2">
+                                            <h3 class="product-title">{{p.pname}}</h3>
+                                            <!-- <h4 class="product-old-price">{{p.price}}</h4> -->
+                                            <h4 class="product-price">{{p.price}}</h4>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
     </div>
-</div>
+</section>
+

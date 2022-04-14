@@ -61,3 +61,7 @@ a.dropdown-item {
     color: #fff;
 }
 
+#footer { 
+    position: relative;
+    padding-top: 20px;
+}
