@@ -33,8 +33,7 @@ const routes: Routes = [
   { path :'checkout', component:CheckoutComponent},
   {path : 'order', component:OrderComponent},
   {path:'checkout',component:CheckoutComponent},
-  {path: 'orderitem', component:DetailComponent}
-
+  {path: 'orderitem', component:DetailComponent},
 ];
 
 @NgModule({
