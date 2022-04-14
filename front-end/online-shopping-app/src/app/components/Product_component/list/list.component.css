@@ -97,7 +97,7 @@ a:hover {
 }
 
 .section-products .single-product .part-1 .new {
-    left: 0;
+    /* left: 0; */
     background-color: #444444;
 }
 
@@ -134,16 +134,12 @@ a:hover {
     transition: color 0.2s;
 }
 
-.section-products .single-product .part-1 ul li a:hover {
-    color: #fe302f;
-}
-
 .section-products .single-product .part-2 .product-title {
     font-size: 1rem;
 }
 
 .section-products .single-product .part-2 h4 {
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 1rem;
 }
 
