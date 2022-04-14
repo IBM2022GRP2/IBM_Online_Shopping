@@ -22,6 +22,8 @@ import { ListCouponComponent } from './components/Coupon_component/list/list.com
 import { AddProductComponent } from './components/Product_component/add/add.component';
 import { HomeComponent } from './components/Home_component/home/home.component';
 import { DetailComponent } from './components/order/detail/detail.component';
+import { ForgotPasswordComponent } from './components/user/forgot-password/forgot-password.component';
+import { AfterforgotComponent } from './components/user/afterforgot/afterforgot.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { DetailComponent } from './components/order/detail/detail.component';
     AddCouponComponent,
     ListCouponComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    ForgotPasswordComponent,
+    AfterforgotComponent
     
   ],
   imports: [

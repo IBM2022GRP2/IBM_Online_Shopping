@@ -16,6 +16,8 @@ import { CheckoutComponent } from './components/Cart_component/checkout/checkout
 import { OrderComponent } from './components/order/order.component';
 import { HomeComponent } from './components/Home_component/home/home.component';
 import { DetailComponent } from './components/order/detail/detail.component';
+import { ForgotPasswordComponent } from './components/user/forgot-password/forgot-password.component';
+import { AfterforgotComponent } from './components/user/afterforgot/afterforgot.component';
 const routes: Routes = [
   {path : '',component:HomeComponent},
   {path:'login',component : LoginComponent},
@@ -34,6 +36,9 @@ const routes: Routes = [
   {path : 'order', component:OrderComponent},
   {path:'checkout',component:CheckoutComponent},
   {path: 'orderitem', component:DetailComponent},
+  {path: 'login/forgotpassword', component:ForgotPasswordComponent},
+  {path:'afterforgot', component:AfterforgotComponent}
+
 ];
 
 @NgModule({

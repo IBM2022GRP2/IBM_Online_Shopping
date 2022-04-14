@@ -12,6 +12,6 @@ public interface UserService {
 	User fetch(int id);
 	
 	User validate(String email,String password);
-	
+	User findByEmail(String email);
 	List<User> list();
 }

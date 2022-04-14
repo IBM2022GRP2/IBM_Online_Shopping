@@ -25,12 +25,14 @@ public class User {
 	private int userId;
 	@Column(name="user_name",length = 30)
 	private String username;
-	@Column(name="email",length = 25, unique = true)
+	@Column(name="email",length = 50, unique = true)
 	private String email;
 	@Column(name="password",length=15)
 	private String password;
 	@Column(length = 15)
 	private String phone_number;
+	@Column(name = "reset_password_token")
+    private String resetPasswordToken;
 	
 	//one to many relation b/w user and order
 	@JsonManagedReference
@@ -93,6 +95,13 @@ public class User {
 		this.phone_number = phone_number;
 	}
 	
+	
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
 	//for user_order
 	@JsonManagedReference
 	@JsonIgnore
@@ -126,12 +135,14 @@ public class User {
 	public void setUser_coup(List<Coupon> user_coup) {
 		this.user_coup = user_coup;
 	}
-
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", phone_number="
-				+ phone_number + "]";
+		return "User [userId=" + userId + ", username=" + username + ", email=" + email + ", password=" + password
+				+ ", phone_number=" + phone_number + ", resetPasswordToken=" + resetPasswordToken + ", user_orders="
+				+ user_orders + ", user_addresses=" + user_addresses + ", user_coup=" + user_coup + "]";
 	}
+
+	
 	
 	
 }

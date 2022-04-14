@@ -29,8 +29,7 @@ export class RegisterComponent implements OnInit {
     setTimeout(()=>{
       this.cartService.createCart(this.user.userId);
     },1000);
-    this._router.navigate(['login']);
-     
+    this._router.navigate(['login'])
   }
 
 }

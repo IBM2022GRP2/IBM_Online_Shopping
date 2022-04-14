@@ -26,4 +26,7 @@ export class UserService {
     const u$ = this._http.get<User[]>(UserService.url+"/listuser");
     return await firstValueFrom(u$);
   }
+  forgotpassword(email:String){
+    this._http.post(UserService.url+"/forgot_password/"+email,User).subscribe(data => data = email);
+  }
 }
