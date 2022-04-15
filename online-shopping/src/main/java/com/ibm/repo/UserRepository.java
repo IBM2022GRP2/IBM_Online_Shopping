@@ -12,5 +12,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	@Query("FROM User WHERE email=:email AND password=:password")
 	User validate(String email,String password);
+	
 	User findByEmail(String email);
 }

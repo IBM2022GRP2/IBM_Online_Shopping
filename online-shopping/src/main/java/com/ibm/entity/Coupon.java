@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
+ * This is a coupon entity
 * @author Mrinal Samanta(@github - Mrinal_Delta)
 * @since 0.0.1
 **/

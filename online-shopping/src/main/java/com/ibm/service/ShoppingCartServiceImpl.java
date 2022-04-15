@@ -18,6 +18,12 @@ import com.ibm.repo.ShoppingCartRepository;
 import com.ibm.util.ProductException;
 import com.ibm.util.ShoppingCartException;
 
+/**
+* This is a shopping cart entity related service
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+*/
+
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 

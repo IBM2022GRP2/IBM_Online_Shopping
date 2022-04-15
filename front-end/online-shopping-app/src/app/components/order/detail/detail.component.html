@@ -1,4 +1,7 @@
-<h2>Order Details</h2>
+<div class="container-fluid" style="display: inline-flex;">
+    <h3 style="margin-right: 500px;">Order Details : {{order.oid}}</h3>
+    <h3>Date : {{order.date}}</h3>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -14,9 +17,9 @@
             <td>{{i.price}}</td>
         </tr>
         <tr>
-            <td>Total Price</td>
-            <td></td>
-            <td>{{order.totalprice}}</td>
+            <th>Total Price</th>
+            <th></th>
+            <th>{{order.totalprice}}</th>
         </tr>
     </tbody>
 </table>

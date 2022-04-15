@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
+ * This is a shopping cart entity
  * @author Mrinal Samanta(@github - Mrinal_Delta)
  * @since 0.0.1
  */

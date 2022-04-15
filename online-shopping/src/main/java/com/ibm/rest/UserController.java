@@ -63,6 +63,7 @@ public class UserController {
 		else
 			throw new InvalidUserException("Kindly check if your email and passwrod are valid...");
 	}
+	
 	@PostMapping(value = "/forgot_password/{email}", produces = "application/json")
 	public String forgetPassword (@PathVariable String email) throws CustomerNotFoundException {
 		User u = service.findByEmail(email);

@@ -1,5 +1,13 @@
 package com.ibm.pojo;
 
+
+/**
+ * @author Mrinal Samanta(@github - Mrinal_Delta)
+ * @category POJO = Plain Hold Java Object
+ * <p>
+ * @apiNote This class is used to add a product to a users cart
+ * @since 0.0.1
+ */
 public class UserProduct {
 	private int uid;
 	private int pid;

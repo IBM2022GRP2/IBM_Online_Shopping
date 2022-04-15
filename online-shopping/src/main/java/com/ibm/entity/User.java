@@ -15,7 +15,6 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-//import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "Users")
@@ -31,8 +30,6 @@ public class User {
 	private String password;
 	@Column(length = 15)
 	private String phone_number;
-	@Column(name = "reset_password_token")
-    private String resetPasswordToken;
 	
 	//one to many relation b/w user and order
 	@JsonManagedReference
@@ -96,12 +93,6 @@ public class User {
 	}
 	
 	
-	public String getResetPasswordToken() {
-		return resetPasswordToken;
-	}
-	public void setResetPasswordToken(String resetPasswordToken) {
-		this.resetPasswordToken = resetPasswordToken;
-	}
 	//for user_order
 	@JsonManagedReference
 	@JsonIgnore
@@ -138,7 +129,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", phone_number=" + phone_number + ", resetPasswordToken=" + resetPasswordToken + ", user_orders="
+				+ ", phone_number=" + phone_number + ", user_orders="
 				+ user_orders + ", user_addresses=" + user_addresses + ", user_coup=" + user_coup + "]";
 	}
 

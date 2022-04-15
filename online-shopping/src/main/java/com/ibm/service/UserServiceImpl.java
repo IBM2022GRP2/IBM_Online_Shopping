@@ -17,14 +17,11 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repo;
 	
 	@Autowired
-	private EmailServiceImpl emailservice;
+	private EmailService emailservice;
 	
 	@Override
 	public int save(User u) {
 		repo.save(u);
-//		emailservice.setReceiver(u.getEmail());
-//		emailservice.setBody("Hi "+u.getUsername()+" ! \n Welcome to our webiste Fragnance World. " );
-//		emailservice.setSubject("Welcome to Fragnance World");
 		String msg = "Hi "+u.getUsername()+" ! \n Welcome to our webiste Fragnance World. " ;
 		String sub= "Welcome to Fragnance World";
 		emailservice.sendEmail(u.getEmail(),sub,msg);

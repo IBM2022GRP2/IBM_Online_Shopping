@@ -18,6 +18,11 @@ import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 import com.ibm.service.ShoppingCartServcie;
 
+/**
+* This is a shopping cart entity related controller
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+*/
 @CrossOrigin
 @RestController
 @RequestMapping(value="Cart")
