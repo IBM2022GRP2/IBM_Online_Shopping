@@ -42,12 +42,12 @@
                         <div class="row" style="font-weight: bold;">{{i.pname}}</div>
                         <div class="row text-muted">{{i.category}}</div>
                     </div>
-                    <div class="col">1</div>
+                    <div class="col">1 pc.</div>
                     <div class="col">{{i.price | currency:"INR"}}</div>
                 </div>
             </div>
             
-            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
+            <div class="back-to-shop"><a (click)="backToDashboard()">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
         </div>
         <div class="col-md-4 summary">
             <div>

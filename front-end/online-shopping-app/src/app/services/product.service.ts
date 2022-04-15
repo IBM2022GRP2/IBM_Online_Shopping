@@ -19,6 +19,10 @@ export class ProductService {
   addProduct(product: Product) {
     this.http.post(ProductService.url + "/add", product).subscribe(data => { data = product; });
   }
+
+  updateProduct(product : Product){
+    this.http.put(ProductService.url+"/update",product).subscribe(data =>{data = product ;})
+  }
   async getProductBy(pid: number) {
     const product$ = this.http.get<Product>(ProductService.url + `/fetch/${pid}`);
     const res = await firstValueFrom(product$);

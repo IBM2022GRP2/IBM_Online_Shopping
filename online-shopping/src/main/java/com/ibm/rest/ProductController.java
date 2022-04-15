@@ -32,7 +32,7 @@ public class ProductController {
 	
 	@PutMapping(value="/update",consumes="application/json")
 	public String update(@RequestBody Product p) {
-		if(service.update(p)) {
+		if(service.updateStock(p)) {
 			return "Product updated successfully!!";
 		}
 		else

@@ -68,7 +68,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	@Override
 	public double addToCart(UserProduct up) throws Exception {
 		//getting a product from database
+		System.out.println(up.getPid());
 		Product p = pserv.fetchByID(up.getPid());
+		
 		//getting a cart by user id
 		ShoppingCart cart = repo.findCartByUserId(up.getUid());
 		

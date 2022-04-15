@@ -18,6 +18,7 @@ import { HomeComponent } from './components/Home_component/home/home.component';
 import { DetailComponent } from './components/order/detail/detail.component';
 import { ForgotPasswordComponent } from './components/user/forgot-password/forgot-password.component';
 import { AfterforgotComponent } from './components/user/afterforgot/afterforgot.component';
+import { UpdateComponent } from './components/Product_component/update/update.component';
 const routes: Routes = [
   {path : '',component:HomeComponent},
   {path:'login',component : LoginComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'register',component : RegisterComponent},
   {path:'addProduct',component:AddProductComponent},
   {path:'list',component: ListProductComponent},
+  {path:'updateProduct',component:UpdateComponent},
   {path:'addCoupon',component : AddCouponComponent},
   {path:'listCoupon',component : ListCouponComponent},
   {path:'viewCart',component:ViewComponent},
