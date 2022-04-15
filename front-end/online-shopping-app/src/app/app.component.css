@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 .custom-btn:hover{
 	letter-spacing:3px;
 	transition:0.8 ease;
@@ -38,9 +38,9 @@
 
 .navbar-nav .nav-item .nav-link{
     color: #F7F7F7;
-    font-family: 'Oooh Baby', cursive;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 18px;
 }
 .dropdown-menu {
     padding: 0px;
@@ -62,6 +62,7 @@ a.dropdown-item {
 }
 
 #footer { 
+    position: absolute;
     padding-top: 20px;
     width: 100%;
 }
