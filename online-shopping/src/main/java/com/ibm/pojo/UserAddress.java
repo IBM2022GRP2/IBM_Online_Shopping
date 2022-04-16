@@ -2,7 +2,7 @@ package com.ibm.pojo;
 
 /**
  * 
- * @author Mrinal Samanta(@github - Mrinal_Delta)
+ * @author Anirban Bhattacharyaa(@github - AnirbanBhattacharyya24)
  * @category POJO = Plain Hold Java Object
  * <p>
  * @apiNote This class is added to accept request from user to add an address that is then passed in the service through controller	

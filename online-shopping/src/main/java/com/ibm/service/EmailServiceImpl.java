@@ -5,7 +5,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 /**
- * This is a coupon entity related controller
+ * This is a Email Service class
 * @author Debarghya Dutta(@github - cap-codeDeb)
 * @since 0.0.1
 **/

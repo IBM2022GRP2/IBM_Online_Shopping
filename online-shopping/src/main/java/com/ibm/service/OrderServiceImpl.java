@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 /**
- * This is a coupon entity related controller
+ * This is a order entity related service
 * @author Debarghya Dutta(@github - cap-codeDeb)
 * @since 0.0.1
 **/

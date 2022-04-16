@@ -1,7 +1,7 @@
 package com.ibm.pojo;
 
 /**
- * @author Mrinal Samanta(@github - Mrinal_Delta)
+ * @author Arpit Ayushman(@github - arpitayushman)
  * @category POJO = Plain Hold Java Object
  * <p>
  * @apiNote This class is used to validate the User based on their email and password through controller

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.ibm.entity.User;
 import com.ibm.pojo.Items;
 /**
- * This is a coupon entity related repository
+ * This is a user entity related repository
 * @author Deebarghya Dutta(@github - cap-codeDeb)
 * @since 0.0.1
 **/ 

@@ -2,7 +2,7 @@ package com.ibm.pojo;
 
 
 /**
- * @author Mrinal Samanta(@github - Mrinal_Delta)
+ * @author Arup Bhattacharjee(@github - 09arup06)
  * @category POJO = Plain Hold Java Object
  * <p>
  * @apiNote This class is used to add a product to a users cart

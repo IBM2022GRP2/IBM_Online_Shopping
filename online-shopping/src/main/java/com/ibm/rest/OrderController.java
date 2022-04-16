@@ -13,7 +13,7 @@ import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
 import com.ibm.service.OrderService;
 /**
- * This is a coupon entity related controller
+ * This is a order entity related controller
 * @author Debarghya Dutta(@github - cap-codeDeb)
 * @since 0.0.1
 **/
