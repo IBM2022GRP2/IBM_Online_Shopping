@@ -1,5 +1,4 @@
-
-<h2>List of Orders</h2>
+<!-- <h2>List of Orders</h2>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -17,5 +16,29 @@
             <td>{{ord.status}}</td>
         </tr>
     </tbody>
-</table> 
+</table>  -->
 
+<div class="card">
+    <div class="col-md-8 cart">
+        <div class="title">
+            <div class="col">
+                <h4><b>List of Orders</b></h4>
+            </div>
+        </div>
+    </div>
+    <div id="hi" class="row border-top border-bottom">
+        <div id="hola" class="row main align-items-center">
+            <div class="col" id="hello">order id</div>
+            <div class="col">date</div>
+            <div class="col">total price</div>
+            <div class="col">order status</div>
+        </div>
+        <div class="row main align-items-center" *ngFor="let ord of order; let i= index" (click)="fetchOrder(i)">
+            <div class="col" id="hello">{{ord.oid}}</div>
+            <div class="col">{{ord.date}}</div>
+            <div class="col">{{ord.totalprice | currency:"INR"}}</div>
+            <div class="col">{{ord.status}}</div>
+        </div>
+    </div>
+    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
+</div>

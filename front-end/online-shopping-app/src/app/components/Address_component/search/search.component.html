@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
   <thead>
       <tr>
           <th>AddressId</th>
@@ -20,4 +20,35 @@
           <td>{{a.pincode}}</td>
       </tr>
   </tbody>
-</table>
+</table> -->
+
+<div class="card">
+    <!-- <div class="row"> -->
+        <div class="col-md-8 cart">
+            <div class="title">
+                <!-- <div class="row"> -->
+                    <div class="col">
+                        <h4><b>List of Orders</b></h4>
+                    </div>
+                </div>
+            </div>
+            <div id="hi" class="row border-top border-bottom">
+                <div id="hola" class="row main align-items-center">
+                    <div class="col">Address id</div>
+                    <div class="col" >House No</div>
+                    <div class="col" >Street</div>
+                    <div class="col">City</div>
+                    <div class="col">State</div>
+                    <div class="col">Pin</div>
+                </div>
+                <div class="row main align-items-center" *ngFor="let a of address;let i = index">
+                    <div class="col">{{a.addressId}}</div>
+                    <div class="col">{{a.houseNo}}</div>
+                    <div class="col" >{{a.street}}</div>
+                    <div class="col">{{a.city}}</div>
+                    <div class="col">{{a.state}}</div>
+                    <div class="col">{{a.pincode}}</div>
+                </div>
+            </div>
+            <div id="hlw" class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
+        </div>
