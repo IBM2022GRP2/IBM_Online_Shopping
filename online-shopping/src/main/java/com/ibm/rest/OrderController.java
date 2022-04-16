@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
 import com.ibm.service.OrderService;
+/**
+ * This is a coupon entity related controller
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+**/
+
 
 @CrossOrigin
 @RestController

@@ -15,6 +15,10 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/**
+* @author Arpit Ayushman(@github - arpitayushman)
+* @since 0.0.1
+**/
 
 @Entity
 @Table(name = "Users")

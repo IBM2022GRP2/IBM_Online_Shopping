@@ -9,7 +9,11 @@ import com.ibm.entity.User;
 import com.ibm.repo.UserRepository;
 import com.ibm.service.EmailServiceImpl;
 import com.ibm.util.CustomerNotFoundException;
-
+/**
+ * This is a coupon entity related controller
+* @author Arpit Ayushman(@github - arpitayushman)
+* @since 0.0.1
+**/
 @Service
 public class UserServiceImpl implements UserService {
 	

@@ -20,7 +20,11 @@ import com.ibm.service.EmailServiceImpl;
 import com.ibm.service.UserService;
 import com.ibm.util.CustomerNotFoundException;
 import com.ibm.util.InvalidUserException;
-
+/**
+ * This is a coupon entity related controller
+* @author Arpit Ayushman(@github - arpitayushman)
+* @since 0.0.1
+**/
 @CrossOrigin
 @RestController
 @RequestMapping(value="User")

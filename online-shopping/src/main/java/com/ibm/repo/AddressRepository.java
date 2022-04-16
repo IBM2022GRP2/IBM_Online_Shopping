@@ -9,8 +9,8 @@ import com.ibm.entity.Address;
 
 
 /** This interface represents Address Repository.
- * 
- *
+ * @author ANIRBAN BHATTACHARYYA
+ *@since 0.0.1
  */
 public interface AddressRepository extends JpaRepository<Address, Integer>{
 	

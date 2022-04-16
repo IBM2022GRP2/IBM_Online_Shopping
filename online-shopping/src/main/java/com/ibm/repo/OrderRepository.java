@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
+/**
+ * This is a Order entity related repository
+* @author Arpit Ayushman (@github - arpitayushman)
+* @since 0.0.1
+**/ 
 
 public interface OrderRepository extends JpaRepository<Order, String> {
 	

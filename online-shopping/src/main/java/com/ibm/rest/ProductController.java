@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Product;
 import com.ibm.service.ProductService;
-
+/**
+ * This is a coupon entity related controller
+* @author Arup Bhattacharjee(@github - 09arup06)
+* @since 0.0.1
+**/
 @CrossOrigin
 @RestController
 @RequestMapping(value="Product")

@@ -10,7 +10,11 @@ import com.ibm.entity.Product;
 
 
 import com.ibm.repo.ProductRepository;
-
+/**
+ * This is a coupon entity related controller
+* @author Arup Bhattacharjee(@github - 09arup06)
+* @since 0.0.1
+**/
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired

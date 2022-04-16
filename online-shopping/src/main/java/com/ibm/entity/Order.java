@@ -19,6 +19,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /* This class represents Order Entity.*/
  
+/**
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+**/
+
 @Entity
 @Table(name="Orders")
 public class Order {

@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+/**
+ * This is a coupon entity related controller
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+**/
 
 @Service
 public class EmailServiceImpl implements EmailService{
