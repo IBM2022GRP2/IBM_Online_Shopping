@@ -1,25 +1,35 @@
-<div class="ba">
-    <div style="text-align: center; margin-left: 200px; margin-right: 200px;">
-        <div id="product-1" class="single-product" style="margin-bottom:200px">
-            <div class="p2">
-                <div class="button_slide slide_right" (click)="add()">Add Products </div>
-            </div>
-        </div>
-        <div style="text-align: right;" class="rightdiv">
-            <div class="p2" class="ba">
-                <div class="button_slide slide_right" style="text-align:right ;" (click)="listCoupon()">List Coupon </div>
-            </div>
-        </div>
 
-        <div style="text-align: left;" class="leftdiv ">
-            <div class="p2" class="ba">
-                <div class="button_slide slide_right" style="text-align:left ;" (click)="addCoupon()">Add Coupons </div>
-            </div>
-        </div>
-        <div style="text-align: center;" class="leftdiv ">
-            <div class="p2" class="ba">
-                <div class="button_slide slide_right" style="text-align:left ;"(click)="profile()">Profile </div>
-            </div>
-        </div>
+<div class="row" >
+
+    <div class="column">
+            <p style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Add Products from here</p>
+            <button class="button button--nanuk button--border-thin button--round-s" (click)="add()">
+                <span>A</span><span>D</span><span>D</span><span>&nbsp;</span><span>P</span><span>R</span><span>O</span><span>D</span><span>U</span><span>C</span><span>T</span><span>S</span>
+            </button>  
+        
+
     </div>
-</div>
+    <div class="column">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Admin Dashboard</p>
+        <button class="button button--nanuk button--border-thin button--round-s" (click)="profile()">
+            <span>D</span><span>A</span><span>S</span><span>H</span><span>&nbsp;</span><span>B</span><span>O</span><span>A</span><span>R</span><span>D</span>
+        </button>
+      
+      </div>
+
+    <div class="column" >
+     <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Add Coupons from here</p>
+      <button class="button button--nanuk button--border-thin button--round-s" (click)="addCoupon()">
+        <span>A</span><span>D</span><span>D</span><span>&nbsp;</span><span>C</span><span>O</span><span>U</span><span>P</span><span>O</span><span>N</span><span>S</span>
+    </button>
+    
+    </div>
+    <div class="column">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">See all Coupons from here</p>
+        <button class="button button--nanuk button--border-thin button--round-s" (click)="listCoupon()">
+        <span>L</span><span>I</span><span>S</span><span>T</span><span>&nbsp;</span><span>C</span><span>O</span><span>U</span><span>P</span><span>O</span><span>N</span><span>S</span>
+    </button>
+    </div>
+    
+  </div>
+  <hr>
