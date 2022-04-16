@@ -16,10 +16,7 @@
         <li class="nav-item"> <a class="nav-link" *ngIf="!status" [routerLink]="['login']">Login</a> </li>
         <li class="nav-item"> <a class="nav-link" [routerLink]="['list']">Products</a> </li>
         <li class="nav-item">
-          <a class="nav-link" type="button" [routerLink]="['search']">
-            
-            <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png" style="height: 26px;">
-          </a>
+          <a class="nav-link" type="button" [routerLink]="['search']">Search</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
@@ -30,7 +27,7 @@
               <button ngbDropdownItem [routerLink]="['addProduct']">Add Product</button>
               <button ngbDropdownItem [routerLink]="['addCoupon']">Add Coupon</button>
               <button ngbDropdownItem [routerLink]="['listCoupon']">List Coupon</button>
-              <button ngbDropdownItem [routerLink]="['adminpanel']">Profile</button>
+              <button ngbDropdownItem [routerLink]="['adminpanel']">Dash Board</button>
             </div>
           </div>
         </li>
@@ -45,8 +42,7 @@
               </a></button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button ngbDropdownItem *ngIf="!admin" (click)="goToCart()">Cart</button>
-
-              <button ngbDropdownItem *ngIf="!admin" [routerLink]="['loginsuccess']">Profile</button>
+              <button ngbDropdownItem *ngIf="!admin" [routerLink]="['loginsuccess']">Dashboard</button>
               <button ngbDropdownItem (click)="logout()">Logout</button>
             </div>
           </div>

@@ -1,24 +1,4 @@
-<!-- <h2>List of Orders</h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Order Id</th>
-            <th>Order Date</th>
-            <th>Total Price</th>
-            <th>Order Status</th>
-        </tr>
-    </thead>
-    <tbody >
-        <tr *ngFor="let ord of order; let i= index" (click)="fetchOrder(i)">
-            <td>{{ord.oid}}</td>
-            <td>{{ord.date}}</td>
-            <td>{{ord.totalprice}}</td>
-            <td>{{ord.status}}</td>
-        </tr>
-    </tbody>
-</table>  -->
-
-<div class="card">
+<div class="card" *ngIf="order.length !== 0">
     <div class="col-md-8 cart">
         <div class="title">
             <div class="col">
@@ -28,10 +8,10 @@
     </div>
     <div id="hi" class="row border-top border-bottom">
         <div id="hola" class="row main align-items-center">
-            <div class="col" id="hello">order id</div>
-            <div class="col">date</div>
-            <div class="col">total price</div>
-            <div class="col">order status</div>
+            <h4 class="col" id="hello">Order ID</h4>
+            <h4 class="col">Date</h4>
+            <h4 class="col">Total Price</h4>
+            <h4 class="col">Order Status</h4>
         </div>
         <div class="row main align-items-center" *ngFor="let ord of order; let i= index" (click)="fetchOrder(i)">
             <div class="col" id="hello">{{ord.oid}}</div>
@@ -40,5 +20,7 @@
             <div class="col">{{ord.status}}</div>
         </div>
     </div>
-    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
+</div>
+<div *ngIf="order.length === 0">
+    <h1>You Don't have any orders to view yet</h1>
 </div>

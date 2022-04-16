@@ -22,6 +22,11 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	@Override
+	public Order getOrder(String oid) {
+		return repo.findById(oid).get();
+	}
+	
+	@Override
 	public List<Order> fetchAllByUserId(int userid){
 		return repo.findAllByUser(userid);
 	}

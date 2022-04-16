@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.ibm.entity.Order;
 import com.ibm.pojo.Items;
 
-public interface OrderRepository extends JpaRepository<Order, Integer> {
+public interface OrderRepository extends JpaRepository<Order, String> {
 	
 	@Query("FROM Order Where user_id=:uid")
 	List<Order> findAllByUser(int uid);

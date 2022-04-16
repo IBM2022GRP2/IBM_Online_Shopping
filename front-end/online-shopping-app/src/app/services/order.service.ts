@@ -14,6 +14,11 @@ export class OrderService {
 
   constructor(private http:HttpClient) { }
 
+  async getOrder(oid : String){
+    const ord$ = this.http.get<Order>(OrderService.url+"/getById/"+oid);
+    return await firstValueFrom(ord$);
+  }
+
   async getByUserId(uid: number){
     const order$= this.http.get<Order[]>(OrderService.url+"/get/"+uid);
     return await firstValueFrom(order$);

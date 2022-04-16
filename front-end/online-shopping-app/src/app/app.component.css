@@ -37,10 +37,10 @@
 }
 
 .navbar-nav .nav-item .nav-link{
-    color: #F7F7F7;
-    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 19px;
 }
 .dropdown-menu {
     padding: 0px;

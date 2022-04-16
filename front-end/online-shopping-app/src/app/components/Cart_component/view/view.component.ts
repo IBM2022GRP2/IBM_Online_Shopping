@@ -51,6 +51,7 @@ export class ViewComponent implements OnInit {
 
   selectAddress(){
       console.log(this.address);
+      localStorage.setItem("deliveryAddress",JSON.stringify(this.address));
   }
 
   selectCoupon(){

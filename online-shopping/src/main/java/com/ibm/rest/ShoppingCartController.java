@@ -49,7 +49,7 @@ public class ShoppingCartController {
 	public String checkout(@RequestBody Checkout c) {//working
 		try {
 			String oid = service.checkout(c.getCid(),c.getUid(),c.getAdid());
-			return "Order with ID: "+oid+" has been placed";
+			return oid;
 		} catch (Exception e) {
 			return e.getMessage();
 		}

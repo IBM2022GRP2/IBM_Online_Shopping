@@ -21,6 +21,11 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 	
+	@GetMapping(value = "/getById/{oid}",produces = "application/json")
+	public Order getOrder(@PathVariable String oid) {
+		return service.getOrder(oid);
+	}
+	
 	@GetMapping(value="/get/{uid}", produces="application/json")
 	public List<Order> fetchOrders(@PathVariable int uid){
 		return service.fetchAllByUserId(uid);
