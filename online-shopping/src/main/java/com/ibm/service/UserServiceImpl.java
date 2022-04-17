@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private EmailService emailservice;
 	
+	//for saving the user object in the database
 	@Override
 	public int save(User u) {
 		repo.save(u);
@@ -31,29 +32,30 @@ public class UserServiceImpl implements UserService {
 		emailservice.sendEmail(u.getEmail(),sub,msg);
 		return u.getUserId();
 	}
+	//for updating the user object in the database
 
 	@Override
 	public boolean update(User u) {
 		repo.save(u);
 		return true;
 	}
-
+	//for fetching the user object by userId from the database
 	@Override
 	public User fetch(int userId) {
 		return repo.findById(userId).get();
 	}  
-	 
+	 //for listing all users that are saved in the database 
 	@Override
 	public List<User> list() {
 		return repo.findAll();
 	}
 
-
+	//validate method used for login. Checks if email and password is correct
 	@Override
 	public User validate(String email, String password) {
 		return repo.validate(email, password);
 	}
-
+	//for fetching the user object by email from the database
 	@Override
 	public User findByEmail(String email) {
 		return repo.findByEmail(email);

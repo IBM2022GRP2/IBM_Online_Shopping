@@ -9,7 +9,7 @@ import com.ibm.entity.User;
 import com.ibm.pojo.Items;
 /**
  * This is a user entity related repository
-* @author Deebarghya Dutta(@github - cap-codeDeb)
+* @author Arpit Ayushman(@github - arpitayushman)
 * @since 0.0.1
 **/ 
 public interface UserRepository extends JpaRepository<User, Integer>{
