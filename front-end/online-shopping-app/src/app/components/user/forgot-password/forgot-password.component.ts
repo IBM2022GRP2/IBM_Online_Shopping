@@ -21,14 +21,3 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
 }
-
-// this.service.loginUserFromRemote(this.login).then((data) => {
-//   this.user = data;
-//   this.isLoggedIn=true;
-//   localStorage.setItem("loginStatus",JSON.stringify(this.isLoggedIn));
-//   localStorage.setItem("regularUser", JSON.stringify(this.user));
-//   setTimeout(()=>{
-//     this.route.navigate(['loginsuccess']).then(()=>{
-//       window.location.reload()}
-//     )},1000);
-// },
