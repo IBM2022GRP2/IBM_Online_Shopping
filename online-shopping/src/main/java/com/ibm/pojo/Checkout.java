@@ -1,5 +1,13 @@
 package com.ibm.pojo;
 
+/**
+ * @author Mrinal Samanta(@github - Mrinal_Delta)
+ * @category POJO = Plain Hold Java Object
+ * <p>
+ * @apiNote This class is used to perform a shopping cart checkout operation controller
+ * @since 0.0.1
+ */
+
 public class Checkout {
 	private int cid;
     private int uid; 

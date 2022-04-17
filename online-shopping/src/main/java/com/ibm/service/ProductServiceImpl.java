@@ -10,7 +10,11 @@ import com.ibm.entity.Product;
 
 
 import com.ibm.repo.ProductRepository;
-
+/**
+ * This is a product entity related service
+* @author Arup Bhattacharjee(@github - 09arup06)
+* @since 0.0.1
+**/
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
@@ -31,6 +35,14 @@ public class ProductServiceImpl implements ProductService {
 		return true;
 	}
 	
+	@Override
+	public boolean updateStock(Product p) {
+		Product prod = repo.findById(p.getPid()).get();
+		prod.setStock(p.getStock());
+		repo.save(prod);
+		return true;
+	}
+	
 	//Fetching products by their product id
 	@Override
 	public Product fetchByID(int pid) {
@@ -40,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 	//Getting the list of all products
 	@Override
 	public List<Product> list() {
-		return repo.findAll();
+		return (List<Product>) repo.findAll();
 	}	
 	
 	//Getting products by searching their category

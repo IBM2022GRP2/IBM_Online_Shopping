@@ -38,4 +38,11 @@ export class ListProductComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+
+  update(idx : number){
+    localStorage.setItem("updateProduct",JSON.stringify(this.product[idx]));
+    setTimeout(()=>{
+      this.router.navigate(['updateProduct']);
+    },1000);
+  }
 }

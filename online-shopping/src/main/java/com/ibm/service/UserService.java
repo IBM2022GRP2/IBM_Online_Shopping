@@ -13,5 +13,7 @@ public interface UserService {
 	
 	User validate(String email,String password);
 	
+	User findByEmail(String email);
+	
 	List<User> list();
 }

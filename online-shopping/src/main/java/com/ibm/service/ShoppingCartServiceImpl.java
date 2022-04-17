@@ -19,6 +19,12 @@ import com.ibm.repo.ShoppingCartRepository;
 import com.ibm.util.ProductException;
 import com.ibm.util.ShoppingCartException;
 
+/**
+* This is a shopping cart entity related service
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+*/
+
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 
@@ -66,7 +72,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	@Override
 	public double addToCart(UserProduct up) throws Exception {
 		//getting a product from database
+		System.out.println(up.getPid());
 		Product p = pserv.fetchByID(up.getPid());
+		
 		//getting a cart by user id
 		ShoppingCart cart = repo.findCartByUserId(up.getUid());
 		

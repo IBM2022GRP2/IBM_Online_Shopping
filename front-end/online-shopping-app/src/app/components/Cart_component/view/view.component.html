@@ -43,7 +43,7 @@
     </div>
 </div> -->
 
-<div class="card">
+<div class="card" *ngIf="cart.total_price !== 0">
     <div class="row">
         <div class="col-md-8 cart">
             <div class="title">
@@ -65,7 +65,7 @@
                 </div>
             </div>
             
-            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+            <div class="back-to-shop"><a (click)="redirect()">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
         </div>
         <div class="col-md-4 summary">
             <div>
@@ -76,24 +76,30 @@
                 <div class="col" style="padding-left:0;">ITEMS {{items.length}}</div>
                 <div class="col text-right"></div>
             </div>
-            <form>
-                     <p>Delivery-Address</p> <select>
+            <form (ngSubmit)="selectAddress()" #addForm="ngForm">
+                <p>Delivery-Address</p> 
+                <select name="address" [(ngModel)]="address">
                     <!-- address options -->
-                    <option class="text-muted" *ngFor="let d of addresses ; let i=index" [value]="d" ><button click="selectAddress(i)">Address {{i+1}}{{d | json}}</button></option>
+                    <option class="text-muted" *ngFor="let d of addresses" [ngValue]="d" >{{d.houseNo}},{{d.street}},{{d.city}},{{d.state}},{{d.pincode}}</option>
                 </select>
+                <button class="btn" type="submit">Address</button>
             </form>
-            <form>
+            <form (ngSubmit)="selectCoupon()" #addForm="ngForm">
                 <p>Coupon-Code</p> 
-                <select >
-                    <option class="text-muted" *ngFor="let c of coupons ; let j=index" [value]="c">Coupon {{j+1}}<br>{{c | json}}</option>
+                <select name="coupon" [(ngModel)]="coupon">
+                    <option class="text-muted" *ngFor="let c of coupons" [ngValue]="c">{{c.cname}} - {{c.discount}}% OFF</option>
                 </select>
+                <button class="btn" type="submit">Apply Coupon</button>
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">{{cart.total_price | currency:"INR"}}</div>
-                <!-- <div class="col">Discounted PRICE</div>
-                <div class="col text-right">{{cart.total_price | currency:"INR"}}</div> -->
-            </div> <button class="btn">CHECKOUT</button>
+            </div> 
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">Discounted PRICE</div>
+                <div class="col text-right">{{discountedprice | currency:"INR"}}</div>
+            </div>
+            <button class="btn" (click)="checkout()">CHECKOUT</button>
         </div>
     </div>
 </div>

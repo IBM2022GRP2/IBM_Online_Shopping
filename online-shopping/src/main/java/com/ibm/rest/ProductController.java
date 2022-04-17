@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Product;
 import com.ibm.service.ProductService;
-
+/**
+ * This is a product entity related controller
+* @author Arup Bhattacharjee(@github - 09arup06)
+* @since 0.0.1
+**/
 @CrossOrigin
 @RestController
 @RequestMapping(value="Product")
@@ -32,7 +36,7 @@ public class ProductController {
 	
 	@PutMapping(value="/update",consumes="application/json")
 	public String update(@RequestBody Product p) {
-		if(service.update(p)) {
+		if(service.updateStock(p)) {
 			return "Product updated successfully!!";
 		}
 		else

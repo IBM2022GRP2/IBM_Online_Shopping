@@ -8,6 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import com.ibm.entity.ShoppingCart;
 import com.ibm.pojo.Items;
 
+/**
+* This is a shopping cart entity related repository
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+*/
 public interface ShoppingCartRepository extends JpaRepository<ShoppingCart, Integer> {
 
 	@Query("FROM ShoppingCart WHERE user_id=:uid")

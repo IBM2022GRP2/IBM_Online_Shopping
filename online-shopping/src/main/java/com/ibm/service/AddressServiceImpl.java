@@ -9,7 +9,10 @@ import com.ibm.entity.Address;
 import com.ibm.entity.User;
 import com.ibm.pojo.UserAddress;
 import com.ibm.repo.AddressRepository;
-
+/** This class represents Address Controller.
+ * @author Anirban Bhattacharyaa
+ * @since 0.0.1
+ */
 @Service
 public class AddressServiceImpl implements AddressService {
 

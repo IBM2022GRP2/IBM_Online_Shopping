@@ -23,7 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * 
 * This is Order related Entity
 **/
- 
+
+
 @Entity
 @Table(name="Orders")
 public class Order {

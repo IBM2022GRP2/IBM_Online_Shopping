@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 /** This class represents generalized User Address.
  * 
  * @author ANIRBAN BHATTACHARYYA
- *
+ * @since 0.0.1
  */
 @Entity
 @Table(name="Address")

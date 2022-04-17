@@ -14,7 +14,7 @@ import { UserService } from 'src/app/services/registration.service';
   styleUrls: ['./loginsuccess.component.css']
 })
 export class LoginsuccessComponent implements OnInit {
-
+  viewAdd : boolean = false;
   viewOrd : boolean = false;
   addressStatus : boolean = false;
   user : User ;
@@ -47,11 +47,13 @@ export class LoginsuccessComponent implements OnInit {
     })
   }
 
-  redirect(){
-    this.router.navigate(['addAddress']);
-  }
-
   viewOrders(){
     this.viewOrd = !this.viewOrd;
+    this.viewAdd =false;
+  }
+
+  viewAddresses(){
+    this.viewAdd = !this.viewAdd;
+    this.viewOrd = false;
   }
 }

@@ -1,43 +1,54 @@
-<div class="container-fluid mt-3">
-    <div class="card">
-        <table>
-            <tr>
-                <td>
-                    <h4 class="text-secondary display-6">{{user.username}}</h4>
-                    <div style="display: inline-flex; align-content: center;">
-                        <img src="https://cdn.pixabay.com/photo/2013/07/12/13/53/businessman-147505_960_720.png" width="100" height="180" class="rounded-circle"></div>
-                
-                    <table>
-                        <tr><td>
-                            <tr><td>Email : {{user.email}}</td></tr>
-                            <tr><td>Phone :{{user.phone_number}}</td></tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+<div style="text-align: center; margin:30px 0px;">
+    <div class="container-fluid mt-3">
+        <div class="card">
+            <table>
+                <tr>
+                    <td>
+                        <div style="display: inline-flex; ">
+                            <img src="https://as1.ftcdn.net/v2/jpg/01/28/56/34/1000_F_128563455_bGrVZnfDCL0PxH1sU33NpOhGcCc1M7qo.jpg"
+                                width="200" height="200" class="rounded-circle">
+                        </div>
+                    </td>
+                    <td>
+                        <table style="text-align: left;">
+                            <tr>
+                                <td>
+                                    <h4 class="text-secondary display-6"><span
+                                            style="font-weight: bold;">{{user.username}}</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Email : </span>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Phone : </span>{{user.phone_number}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="container row" style="display: inline-flex;">
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="viewAddresses()">View Address</button>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="viewOrders()">View Orders</button>
+        </div>
     </div>
 </div>
-
-<hr>
-<div>
-<div *ngIf="!addressStatus" style="width: 80%;">
-    <div>
-        <list-address></list-address>
-        <button type="submit" class="btn btn-primary" (click)="redirect()">Add Another address</button>
-        
-    </div>
-</div>
-
 <div class="container-fluid" *ngIf="addressStatus" style="width: 80%; text-align: center;">
-    <h3>You haven't added any addresses yet. Please Add one  below</h3>
+    <h3>You haven't added any addresses yet. Please Add one below</h3>
     <div style="width: 50%; margin: auto;">
         <add-address></add-address>
         <button type="submit" class="btn btn-primary" style="margin-top: 5px;" (click)="refresh()">Submit</button>
     </div>
 </div>
+<div *ngIf="viewAdd && !addressStatus">
+    <list-address></list-address>
 </div>
-<div>
-    
-    <div><button type="submit" class="btn btn-primary" (click)="viewOrders()">View Orders</button>
-        <orders-user *ngIf="viewOrd"></orders-user></div>
+<div *ngIf="viewOrd">
+    <orders-user></orders-user>
 </div>

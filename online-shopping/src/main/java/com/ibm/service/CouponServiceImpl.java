@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 import com.ibm.entity.Coupon;
 import com.ibm.repo.CouponRepository;
 
+/**
+ * This is a coupon entity related service
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+**/
+
 @Service
 public class CouponServiceImpl implements CouponService {
 

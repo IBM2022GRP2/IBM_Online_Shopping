@@ -21,12 +21,14 @@ export class ViewComponent implements OnInit {
   cart : ShoppingCart;
   addresses : Address[]=[];
   coupons : Coupon[]=[];
-  // address : Address;
-
+  address : Address;
+  coupon : Coupon;
+  discountedprice : number = 0;
   user : User = JSON.parse(localStorage.getItem("regularUser")!);
   constructor(private cartService : CartService, private router:Router , private addressService : AddressService , private couponService : CouponService) { 
-    this.cart = new ShoppingCart(0,0,this.user)
-  
+    this.cart = new ShoppingCart(0,0,this.user);
+    this.address = new Address(0,0,"","","",0,this.user);
+    this.coupon = new Coupon(0,"",0);
   }
 
   ngOnInit(): void {
@@ -47,13 +49,23 @@ export class ViewComponent implements OnInit {
     })
   }
 
-  selectAddress(idx : number){
-      console.log(this.addresses[idx]);
+  selectAddress(){
+      console.log(this.address);
+      localStorage.setItem("deliveryAddress",JSON.stringify(this.address));
   }
 
+  selectCoupon(){
+    console.log(this.coupon);
+    this.discountedprice = this.cart.total_price - ((this.cart.total_price*this.coupon.discount)/100);
+    console.log(this.discountedprice);
+  }
+
+  redirect(){
+    this.router.navigate(['list']);
+  }
   checkout(){
-    var coup = JSON.parse(localStorage.getItem("coupon")!);
-    var add = JSON.parse(localStorage.getItem("address")!);
+    var coup = this.coupon.cid;
+    var add = this.address.addressId;
     this.cartService.checkOut(new Checkout(coup,this.user.userId,add));
 
     this.cartService.fetchByUser(this.user.userId).then(data=>{
@@ -61,7 +73,7 @@ export class ViewComponent implements OnInit {
       localStorage.setItem("cart",JSON.stringify(data));
       setTimeout(()=>{
         // this.ngOnInit();
-        this.router.navigate(['checkout']);
+        this.router.navigate(['checkout']).then(window.location.reload);
       },1000);
       } );
   }

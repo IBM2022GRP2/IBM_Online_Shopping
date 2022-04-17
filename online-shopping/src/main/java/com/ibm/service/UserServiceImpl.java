@@ -8,7 +8,12 @@ import org.springframework.stereotype.Service;
 import com.ibm.entity.User;
 import com.ibm.repo.UserRepository;
 import com.ibm.service.EmailServiceImpl;
-
+import com.ibm.util.CustomerNotFoundException;
+/**
+ * This is a user entity related service
+* @author Arpit Ayushman(@github - arpitayushman)
+* @since 0.0.1
+**/
 @Service
 public class UserServiceImpl implements UserService {
 	
@@ -16,14 +21,11 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repo;
 	
 	@Autowired
-	private EmailServiceImpl emailservice;
+	private EmailService emailservice;
 	
 	@Override
 	public int save(User u) {
 		repo.save(u);
-//		emailservice.setReceiver(u.getEmail());
-//		emailservice.setBody("Hi "+u.getUsername()+" ! \n Welcome to our webiste Fragnance World. " );
-//		emailservice.setSubject("Welcome to Fragnance World");
 		String msg = "Hi "+u.getUsername()+" ! \n Welcome to our webiste Fragnance World. " ;
 		String sub= "Welcome to Fragnance World";
 		emailservice.sendEmail(u.getEmail(),sub,msg);
@@ -40,7 +42,7 @@ public class UserServiceImpl implements UserService {
 	public User fetch(int userId) {
 		return repo.findById(userId).get();
 	}  
-
+	 
 	@Override
 	public List<User> list() {
 		return repo.findAll();
@@ -52,4 +54,8 @@ public class UserServiceImpl implements UserService {
 		return repo.validate(email, password);
 	}
 
+	@Override
+	public User findByEmail(String email) {
+		return repo.findByEmail(email);
+	}
 }

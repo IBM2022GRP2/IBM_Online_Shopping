@@ -7,6 +7,11 @@ import com.ibm.entity.User;
 import com.ibm.pojo.Items;
 import com.ibm.pojo.UserProduct;
 
+/**
+* This is a shopping cart entity related service interface
+* @author Mrinal Samanta(@github - Mrinal_Delta)
+* @since 0.0.1
+*/
 public interface ShoppingCartServcie {
 	
 	int createCart(int uid);

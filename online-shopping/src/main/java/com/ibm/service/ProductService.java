@@ -11,6 +11,8 @@ public interface ProductService {
 	
 	boolean update(Product p);
 	
+	boolean updateStock(Product p);
+	
 	Product fetchByID(int pid);
 	
 	List<Product> list();

@@ -8,6 +8,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+/**
+ * This is a order entity related service
+* @author Debarghya Dutta(@github - cap-codeDeb)
+* @since 0.0.1
+**/
 
 
 /**
@@ -27,6 +32,11 @@ public class OrderServiceImpl implements OrderService {
 	public String addOrder(Order ordr) {
 		repo.save(ordr);
 		return ordr.getOid();
+	}
+	
+	@Override
+	public Order getOrder(String oid) {
+		return repo.findById(oid).get();
 	}
 	
 	@Override

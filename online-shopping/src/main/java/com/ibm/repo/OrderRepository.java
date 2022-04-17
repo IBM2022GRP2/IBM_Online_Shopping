@@ -15,7 +15,9 @@ import com.ibm.pojo.Items;
 * This is Order related repository
 **/
 
-public interface OrderRepository extends JpaRepository<Order, Integer> {
+
+public interface OrderRepository extends JpaRepository<Order, String> {
+
 	
 	@Query("FROM Order Where user_id=:uid")
 	List<Order> findAllByUser(int uid);
