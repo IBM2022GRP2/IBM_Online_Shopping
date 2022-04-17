@@ -72,7 +72,6 @@ export class ViewComponent implements OnInit {
       this.cart = data;
       localStorage.setItem("cart",JSON.stringify(data));
       setTimeout(()=>{
-        // this.ngOnInit();
         this.router.navigate(['checkout']).then(window.location.reload);
       },1000);
       } );
