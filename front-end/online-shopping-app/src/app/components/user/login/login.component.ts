@@ -51,9 +51,6 @@ export class LoginComponent implements OnInit {
       (error : HttpErrorResponse)=>{
         this.message = error.error.message;
       });
-      
-      
-     
     }
   }
 

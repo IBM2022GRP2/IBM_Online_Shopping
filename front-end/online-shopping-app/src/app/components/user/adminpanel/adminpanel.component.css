@@ -9,7 +9,7 @@ p{
 .row {
   display: flex;
   margin-top: 100px;
-  width: 80%;
+ 
 }
 .button--text-thin {
 	font-weight: 300;

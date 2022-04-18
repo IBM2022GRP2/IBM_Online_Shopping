@@ -21,10 +21,7 @@ listCoupon(){
 addCoupon(){
   this.router.navigate(['addCoupon'])
 }
-profile(){
-  this.router.navigate(['profile'])
-}
 update(){
-  this.router.navigate(['updateProduct'])
+  this.router.navigate(['list'])
 }
 }

@@ -31,7 +31,7 @@ export class CartService {
   }
 
   //placing an order
-  checkOut(co : Checkout){
+  async checkOut(co : Checkout){
     this.http.post(CartService.url+"/Checkout",co).subscribe({
       next :(data)=>{data=co;},
       error:(error : HttpErrorResponse)=>{localStorage.setItem("order",JSON.stringify(error.error.text))}

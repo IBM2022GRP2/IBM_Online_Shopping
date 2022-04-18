@@ -33,13 +33,13 @@ public class UserController {
 	private UserService service;
 	@Autowired
 	private EmailServiceImpl emailservice;
-
+	//api for registration of new user
 	@PostMapping(value="/signup", consumes="application/json")
 	public String save(@RequestBody User u) {
 		int uid =service.save(u);
 		return "User saved with id: " + uid;
 	}
-	
+	//api for updation of the already registered user
 	@PutMapping(value="/update",consumes="application/json")
 	public String update(@RequestBody User u) {
 		if(service.update(u)) {
@@ -48,17 +48,17 @@ public class UserController {
 		else
 			return "Unsuccessfull";
 	}
-	
+	//api for fetching  user from the database by the userid
 	@GetMapping(value = "/fetchuser/{userId}", produces="application/json")
 	public User fetch(@PathVariable int userId) {
 		return service.fetch(userId);
 	}
-	
+	//for listing all the registered users
 	@GetMapping(value="/listuser",produces="application/json")
 	public List<User> list(){
 		return service.list();
 	}
-	
+	//for user login
 	@PostMapping(value="/login",consumes="application/json")
 	public ResponseEntity<User> validate(@RequestBody Login l) throws InvalidUserException{
 		User u = service.validate(l.getEmail(), l.getPass());
@@ -67,7 +67,7 @@ public class UserController {
 		else
 			throw new InvalidUserException("Kindly check if your email and passwrod are valid...");
 	}
-	
+	//api for forgot password. This method directly send password on the registered email Id
 	@PostMapping(value = "/forgot_password/{email}", produces = "application/json")
 	public String forgetPassword (@PathVariable String email) throws CustomerNotFoundException {
 		User u = service.findByEmail(email);

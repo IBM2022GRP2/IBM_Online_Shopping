@@ -39,7 +39,7 @@ public class ShoppingCartController {
 	@PostMapping(value="/addToCart",consumes="application/json")
 	public String addToCart(@RequestBody UserProduct p) {//working
 		try {
-			return "Total Price: "+service.addToCart(p);
+			return "Your product has been added to Cart \nTotal Price: "+service.addToCart(p);
 		} catch (Exception e) {
 			return e.getMessage();
 		}

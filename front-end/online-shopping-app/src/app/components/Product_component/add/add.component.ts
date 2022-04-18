@@ -15,7 +15,7 @@ export class AddProductComponent implements OnInit {
   constructor(private router: Router, private service: ProductService) {
     this.product = new Product(0, '', 0, 0, '');
     this.category = ['Male', 'Female', 'Unisex'];
-    this.pname = ['Park Avenue', 'Denver', 'Axe Signature', 'Engage', 'Wild Stone', 'Calvin Klein', 'Fogg']
+    this.pname = ['Park Avenue', 'Denver', 'Axe Signature', 'Engage', 'Wild Stone', 'Calvin Klein', 'Fogg','Acqua Di Gio','Park Avenue Euphoria','Coco Noir Chanel','Calvin Klein','Gemma Di Paradiso','Creed X','Red Diamond','Evidence']
   }
 
   ngOnInit(): void {

@@ -1,29 +1,4 @@
-<!-- <div class="container-fluid" style="display: inline-flex;">
-    <h3 style="margin-right: 500px;">Order Details : {{order.oid}}</h3>
-    <h3>Date : {{order.date}}</h3>
-</div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Item Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let i of item">
-            <td>{{i.pname}}</td>
-            <td>1</td>
-            <td>{{i.price}}</td>
-        </tr>
-        <tr>
-            <th>Total Price</th>
-            <th></th>
-            <th>{{order.totalprice}}</th>
-        </tr>
-    </tbody>
-</table> -->
-
+<div id="hw">
 <div class="card">
     <div class="row">
         <div class="col-md-8 cart">
@@ -32,7 +7,7 @@
                     <div class="col">
                         <h4><b>Orders</b></h4>
                     </div>
-                    <div class="col align-self-center text-right text-muted">{{item.length}} items</div>
+                    <div style="font-weight: bold;" class="col align-self-center text-right text-muted">{{item.length}} items</div>
                 </div>
             </div>
             <div class="row border-top border-bottom">
@@ -47,7 +22,7 @@
                 </div>
             </div>
             
-            <div class="back-to-shop"><a (click)="backToDashboard()">&leftarrow;</a><span class="text-muted">Back to Profile</span></div>
+            <div style="cursor: pointer ; font-size: larger; font-weight: 400;" class="back-to-shop"><a (click)="backToDashboard()">&leftarrow;&nbsp;Back to Dashboard</a></div>
         </div>
         <div class="col-md-4 summary">
             <div>
@@ -68,4 +43,5 @@
             </div> 
         </div>
     </div>
+</div>
 </div>
