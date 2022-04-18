@@ -32,8 +32,7 @@ public class Product {
 	private double price;
 	@Column(name = "category", length = 10)
 	private String category;
-	@Column(name="imageurl")
-	private String url;
+
 	//many-to-many relation b/w shoppingcart and product
 	@JsonIgnore
 	@ManyToMany
@@ -90,13 +89,6 @@ public class Product {
 		this.category = category;
 	}
 
-	//For specific product Images
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
 	//for products in a shoppingcart
 	@JsonIgnore
 	public List<ShoppingCart> getProd_cart() {

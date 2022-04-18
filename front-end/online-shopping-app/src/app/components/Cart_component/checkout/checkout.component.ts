@@ -20,14 +20,24 @@ export class CheckoutComponent implements OnInit {
   order : Order;
   user : User = JSON.parse(localStorage.getItem("regularUser")!);
   add : Address = JSON.parse(localStorage.getItem("deliveryAddress")!);
-  constructor(private orderService : OrderService) {  
+  n : Date;
+  s: String='';
+  constructor(private orderService : OrderService, private router:Router) {  
    this.order = new Order("",0,"",this.date,this.user,this.add);
+   this.n= new Date();
   }
 
   ngOnInit(): void {
     this.message = JSON.parse(localStorage.getItem("order")!);
+    this.s= this.n.toLocaleString("en-AU");
     this.orderService.getOrder(this.message).then(data=>{
       this.order = data;
     });
+  }
+  shop(){
+    this.router.navigate(['list'])
+  }
+  dash(){
+    this.router.navigate(['loginsuccess'])
   }
 }

@@ -17,7 +17,7 @@ export class AddAddressComponent implements OnInit {
   user : User = JSON.parse(localStorage.getItem("regularUser")!);
   constructor(private service : AddressService,private router : Router) { 
     this.address = new UserAddress(0,this.user.userId,0,'','','',0);
-    this.state =  ["Andhra Pradesh","Goa","West Bengal","Bihar","Kerala"];
+    this.state =  ["Andhra Pradesh","Goa","West Bengal","Bihar","Kerala",'Haryana','Manipur','Sikkim','Arunachal Pradesh','Himachal Pradesh','Jharkhand','Karnataka','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telengana','Tripura','Uttarakhand','Assam','Gujrat'];
    
   }
 

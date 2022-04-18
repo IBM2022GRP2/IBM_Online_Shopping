@@ -48,8 +48,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	@Autowired 
 	private UserService userserv;
 	
-//	@Autowired
-//	private EmailService emailservice;
+	@Autowired
+	private EmailService emailservice;
 	
 	//used to create an shopping cart for an user for the first time
 	@Override
@@ -104,6 +104,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 	@Override
 	public String checkout(int cid,int uid,int adid) throws Exception{
 		ShoppingCart cart = repo.findCartByUserId(uid);
+		User u = userserv.fetch(uid);
 		if(cart.getShop_cart().iterator().next()!=null) {
 			Coupon c = cserv.fetchCoupon(cid);
 			double discounted_value = cart.getTotal_price()-((c.getDiscount()*cart.getTotal_price())/100);
@@ -115,7 +116,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 			ord.setTotalprice(cart.getTotal_price());
 			ord.setTotalprice(discounted_value);
 			ord.setStatus("Paid");
-			ord.setUserord(userserv.fetch(uid));
+			ord.setUserord(u);
 			ord.setAddOrd(addserv.getAddress(adid));
 			ord.getProduct_list().addAll(cart.getShop_cart());
 			oserv.addOrder(ord);
@@ -125,9 +126,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 			repo.save(cart);
 			
 			//Sending mail whenever user checkout/confirms the order
-//			String msg = "Hello "+userserv.fetch(uid).getUsername()+" ! \n Thankyou for placing order. \n Your Order is : "+(ord.getOid())+"\n Your order will be delivered by: "+ord.getDate().plusDays(3) ;
-//			String sub= "Order Placed";
-//			emailservice.sendEmail(userserv.fetch(uid).getEmail(),sub,msg);
+			String msg = "Hello "+u.getUsername()+" ! \n Thankyou for placing order. \n Your Order is : "+(ord.getOid())+"\n Your order will be delivered by: "+ord.getDate().plusDays(7) ;
+			String sub= "Order Placed";
+			emailservice.sendEmail(u.getEmail(),sub,msg);
 			
 			return ord.getOid();
 		}
