@@ -65,7 +65,7 @@ public class UserController {
 		if(u!=null)
 			return new ResponseEntity<User>(u,HttpStatus.OK);
 		else
-			throw new InvalidUserException("Kindly check if your email and passwrod are valid...");
+			throw new InvalidUserException("Kindly check if your email and password are valid...");
 	}
 	//api for forgot password. This method directly send password on the registered email Id
 	@PostMapping(value = "/forgot_password/{email}", produces = "application/json")
