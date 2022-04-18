@@ -39,7 +39,7 @@
                     <!-- address options -->
                     <option class="text-muted" *ngFor="let d of addresses" [ngValue]="d" >{{d.houseNo}},{{d.street}},{{d.city}},{{d.state}},{{d.pincode}}</option>
                 </select>
-                <button class="btn" type="submit">Select Address</button>
+                <button class="btn" type="submit">Apply Address</button>
             </form>
             <form (ngSubmit)="selectCoupon()" #addForm="ngForm">
                 <p>Coupon-Code</p> 
