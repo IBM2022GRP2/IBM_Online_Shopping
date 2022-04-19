@@ -39,14 +39,14 @@
                     <!-- address options -->
                     <option class="text-muted" *ngFor="let d of addresses" [ngValue]="d" >{{d.houseNo}},{{d.street}},{{d.city}},{{d.state}},{{d.pincode}}</option>
                 </select>
-                <button class="btn" type="submit">Apply Address</button>
+                <button class="btn" type="submit" style="font-size: 15px;">Apply Address</button>
             </form>
             <form (ngSubmit)="selectCoupon()" #addForm="ngForm">
                 <p>Coupon-Code</p> 
                 <select name="coupon" [(ngModel)]="coupon">
                     <option class="text-muted" *ngFor="let c of coupons" [ngValue]="c">{{c.cname}} - {{c.discount}}% OFF</option>
                 </select>
-                <button class="btn" type="submit">Apply Coupon</button>
+                <button class="btn" type="submit" style="font-size: 15px;">Apply Coupon</button>
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
@@ -56,12 +56,12 @@
                 <div class="col">Discounted PRICE</div>
                 <div class="col text-right">{{discountedprice | currency:"INR"}}</div>
             </div>
-            <button class="btn" (click)="checkout()">CHECKOUT</button>
+            <button class="btn" (click)="checkout()" style="font-size: 15px;">CHECKOUT</button>
         </div>
     </div>
 </div>
 
 
 <div *ngIf="cart.total_price === 0">
-    <h1>You have nothing in your cart to checkout...</h1>
+    <h1 style="margin: 200px 100px 200px 100px; text-align:center">You have nothing in your cart to checkout...</h1>
 </div> 

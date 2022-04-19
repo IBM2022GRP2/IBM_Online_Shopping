@@ -125,10 +125,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartServcie {
 			cart.setTotal_price(0);
 			repo.save(cart);
 			
-			//Sending mail whenever user checkout/confirms the order
-			String msg = "Hello "+u.getUsername()+" ! \n Thank you for placing order. \n Your Order is : "+(ord.getOid())+"\n Your order will be delivered by: "+ord.getDate().plusDays(7) ;
-			String sub= "Order Placed";
-			emailservice.sendEmail(u.getEmail(),sub,msg);
+//			Sending mail whenever user checkout/confirms the order
+//			String msg = "Hello "+u.getUsername()+" ! \n Thank you for placing order. \n Your Order is : "+(ord.getOid())+"\n Your order will be delivered by: "+ord.getDate().plusDays(7) ;
+//			String sub= "Order Placed";
+//			emailservice.sendEmail(u.getEmail(),sub,msg);
 			
 			return ord.getOid();
 		}
