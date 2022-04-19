@@ -174,7 +174,6 @@ img{
 }
 div.gallery {
     margin: 25px;
-    /* border: 1px solid #ccc; */
     width: 250px;
   }
   
@@ -192,7 +191,6 @@ div.gallery {
     text-align: center;
   }
 #des{
-    /* background-color: #c6f5dd; */
     text-align: start;
     color: black
 }

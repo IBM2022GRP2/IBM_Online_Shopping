@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.entity.User;
 import com.ibm.repo.UserRepository;
-import com.ibm.service.EmailService;
-//import com.ibm.util.CustomerNotFoundException;
 /**
  * This is a user entity related service
 * @author Arpit Ayushman(@github - arpitayushman)
